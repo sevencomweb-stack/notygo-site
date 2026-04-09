@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fonctionnalités — Notygo</title>
+  <meta name="description" content="Découvrez toutes les fonctionnalités de Notygo : notifications push, appels automatiques, dictée vocale, écran TV, gestion des scores et plus.">
+  <meta property="og:title" content="Fonctionnalités — Notygo">
+  <meta property="og:description" content="Découvrez toutes les fonctionnalités de Notygo : notifications push, appels automatiques, dictée vocale, écran TV, gestion des scores et plus.">
+  <meta property="og:url" content="https://notygo.fr/fonctionnalites.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Notygo">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:image" content="https://notygo.fr/images/Logo.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Fonctionnalités — Notygo">
+  <meta name="twitter:description" content="Découvrez toutes les fonctionnalités de Notygo : notifications push, appels automatiques, dictée vocale, écran TV, gestion des scores et plus.">
+  <meta name="twitter:image" content="https://notygo.fr/images/Logo.png">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://notygo.fr/fonctionnalites.html">
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+  <link rel="shortcut icon" href="/images/favicon.svg">
+  <link rel="stylesheet" href="/style.css?v=3">
+  <style>
+    /* ── Auto-scan mock ── */
+    .auto-scan-mock {
+      background: white;
+      border-radius: 16px;
+      padding: 1.5rem;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+      border: 1px solid #e2e8f0;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      max-width: 400px;
+      width: 100%;
+      margin: 0 auto;
+    }
+    .auto-scan-header {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid #e2e8f0;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #0A1F44;
+    }
+    .scan-dot {
+      width: 8px; height: 8px;
+      background: #22c55e;
+      border-radius: 50%;
+      margin-left: auto;
+      animation: pulse-dot 1.5s ease-in-out infinite;
+    }
+    @keyframes pulse-dot {
+      0%,100% { opacity:1; transform:scale(1); }
+      50% { opacity:0.4; transform:scale(0.7); }
+    }
+    .auto-scan-source {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+    .auto-scan-source strong { color: #0A1F44; }
+    .auto-scan-list { display: flex; flex-direction: column; gap: 0.5rem; }
+    .auto-scan-item {
+      display: flex;
+      gap: 0.75rem;
+      align-items: flex-start;
+      padding: 0.5rem 0.75rem;
+      border-radius: 8px;
+    }
+    .auto-scan-item--sent { background: #f0fdf4; }
+    .auto-scan-item--sent .scan-check { color: #22c55e; font-weight: 700; flex-shrink: 0; }
+    .auto-scan-item--pending { background: #fff7ed; }
+    .auto-scan-item--pending .scan-spin {
+      color: #FF6422;
+      flex-shrink: 0;
+      display: inline-block;
+      animation: spin 1.2s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .auto-scan-item-title { font-weight: 600; font-size: 0.8rem; color: #0A1F44; }
+    .auto-scan-item-sub { font-size: 0.7rem; color: var(--text-muted); }
+    .auto-scan-footer {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      text-align: center;
+      padding-top: 0.75rem;
+      border-top: 1px solid #e2e8f0;
+    }
+
+    /* ── Voice mock ── */
+    .voice-mock {
+      background: #0A1F44;
+      border-radius: 16px;
+      padding: 1.75rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      max-width: 380px;
+      width: 100%;
+      margin: 0 auto;
+    }
+    .voice-mock-label {
+      color: rgba(255,255,255,0.65);
+      font-size: 0.82rem;
+      text-align: center;
+    }
+    .voice-waves {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      height: 44px;
+    }
+    .voice-waves span {
+      display: block;
+      width: 4px;
+      border-radius: 2px;
+      background: #FF6422;
+      animation: wave-bar 0.9s ease-in-out infinite;
+    }
+    .voice-waves span:nth-child(1) { height:10px; animation-delay:0s; }
+    .voice-waves span:nth-child(2) { height:22px; animation-delay:0.1s; }
+    .voice-waves span:nth-child(3) { height:36px; animation-delay:0.2s; }
+    .voice-waves span:nth-child(4) { height:44px; animation-delay:0.3s; }
+    .voice-waves span:nth-child(5) { height:30px; animation-delay:0.2s; }
+    .voice-waves span:nth-child(6) { height:18px; animation-delay:0.1s; }
+    .voice-waves span:nth-child(7) { height:8px; animation-delay:0s; }
+    @keyframes wave-bar {
+      0%,100% { transform:scaleY(0.35); }
+      50% { transform:scaleY(1); }
+    }
+    .voice-transcript {
+      color: white;
+      font-style: italic;
+      text-align: center;
+      font-size: 0.88rem;
+      background: rgba(255,255,255,0.08);
+      padding: 0.75rem 1rem;
+      border-radius: 8px;
+    }
+    .voice-parsed { display: flex; flex-direction: column; gap: 0.45rem; }
+    .voice-parsed-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.4rem 0.75rem;
+      background: rgba(255,255,255,0.07);
+      border-radius: 6px;
+      color: rgba(255,255,255,0.65);
+      font-size: 0.82rem;
+    }
+    .voice-parsed-row strong { color: white; font-size: 0.95rem; }
+    .voice-send-btn {
+      background: #FF6422;
+      color: white;
+      text-align: center;
+      padding: 0.75rem;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 0.875rem;
+    }
+  </style>
+</head>
+<body>
+
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu-header">
+    <a href="/" class="nav-logo"><img src="/images/logo-white.png" alt="Notygo" width="118" height="36"></a>
+    <button class="mobile-menu-close" onclick="closeMobileMenu()">✕</button>
+  </div>
+  <nav>
+    <a href="/">Accueil</a>
+    <a href="fonctionnement.html">Comment ça marche</a>
+    <a href="fonctionnalites.html">Fonctionnalités</a>
+    <a href="tarifs.html">Tarifs</a>
+    <a href="blog.html">Blog</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <div class="mobile-menu-ctas">
+    <a href="https://notygo.app/login" style="background:rgba(255,255,255,0.1);color:white;border:1px solid rgba(255,255,255,0.3);">Se connecter</a>
+    <a href="https://notygo.app/register" style="background:#FF6422;color:white;">Créer un compte gratuit</a>
+  </div>
+</div>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-logo"><img src="/images/logo-white.png" alt="Notygo" width="118" height="36"></a>
+    <ul class="nav-links">
+      <li><a href="/">Accueil</a></li>
+      <li><a href="fonctionnement.html">Comment ça marche</a></li>
+      <li><a href="fonctionnalites.html" class="active">Fonctionnalités</a></li>
+      <li><a href="tarifs.html">Tarifs</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-ctas">
+      <a href="https://notygo.app/login" class="btn-nav-login">Se connecter</a>
+      <a href="https://notygo.app/register" class="btn-nav-register">Créer un compte</a>
+    </div>
+    <button class="nav-burger" onclick="openMobileMenu()">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="container">
+    <h1>Toutes les fonctionnalités</h1>
+    <p>Tout ce dont un organisateur de concours sportif a besoin, dans une seule plateforme.</p>
+  </div>
+</section>
+
+<!-- NOTIFICATIONS PUSH -->
+<section style="background: var(--surface);">
+  <div class="container">
+    <div class="feat-showcase">
+      <div>
+        <p class="section-label" style="text-align:left">Fonctionnalité clé</p>
+        <h2 class="section-title" style="text-align:left">Notifications push instantanées</h2>
+        <p style="color:var(--text-muted); margin-bottom:1.5rem;">Vos joueurs reçoivent une notification directement sur leur téléphone dès qu'une partie est appelée — même si l'écran est verrouillé ou que l'onglet est fermé.</p>
+        <ul style="list-style:none; display:flex; flex-direction:column; gap:0.75rem;">
+          <li style="display:flex;gap:10px;align-items:flex-start;"><span style="color:var(--gold);font-weight:700;flex-shrink:0;">✓</span><span>Fonctionne sur iOS (16.4+) et Android</span></li>
+          <li style="display:flex;gap:10px;align-items:flex-start;"><span style="color:var(--gold);font-weight:700;flex-shrink:0;">✓</span><span>Mode standard (équipe A vs équipe B) ou solo (athlète individuel)</span></li>
+          <li style="display:flex;gap:10px;align-items:flex-start;"><span style="color:var(--gold);font-weight:700;flex-shrink:0;">✓</span><span>Rappels possibles si une équipe ne se présente pas</span></li>
+          <li style="display:flex;gap:10px;align-items:flex-start;"><span style="color:var(--gold);font-weight:700;flex-shrink:0;">✓</span><span>S'affiche automatiquement sur les montres connectées (Apple Watch, Samsung, Garmin…)</span></li>
+        </ul>
+
+        <p style="margin-top:1.25rem;"><a href="fonctionnement.html#joueur" style="color:var(--accent);font-weight:600;text-decoration:underline;">→ Comment ça marche pour les joueurs ?</a></p>
+      </div>
+
+      <!-- Illustration notification avec fond -->
+      <div class="notif-showcase">
+        <div class="notif-bg"></div>
+        <div class="notif-overlay"></div>
+        <div class="notif-cards">
+          <div class="notif-card">
+            <div class="notif-card-header">
+              <img src="/images/logo-white.png" alt="Notygo" style="height:16px;opacity:0.9;">
+              <span>maintenant</span>
+            </div>
+            <div class="notif-card-title">🔔 Partie appelée</div>
+            <div class="notif-card-body">Équipe 42 vs Équipe 57 — Terrain 3</div>
+          </div>
+          <div class="notif-card notif-card-solo">
+            <div class="notif-card-header">
+              <img src="/images/logo-white.png" alt="Notygo" style="height:16px;opacity:0.9;">
+              <span>maintenant</span>
+            </div>
+            <div class="notif-card-title">🧍 Vous êtes appelé(e)</div>
+            <div class="notif-card-body">Jean Dupont — Zone 3</div>
+          </div>
+        </div>
+        <div class="notif-badge">Mode standard &amp; solo</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- APPELS AUTOMATIQUES -->
+<section>
+  <div class="container">
+    <div class="feat-showcase">
+      <!-- Visual LEFT -->
+      <div class="auto-scan-mock">
+        <div class="auto-scan-header">
+          <span>🤖</span> Détection automatique
+          <span class="scan-dot"></span>
+        </div>
+        <div class="auto-scan-source">Source : <strong>Gestion Concours</strong></div>
+        <div class="auto-scan-list">
+          <div class="auto-scan-item auto-scan-item--sent">
+            <span class="scan-check">✓</span>
+            <div>
+              <div class="auto-scan-item-title">Équipe 42 vs 57 — Terrain 3</div>
+              <div class="auto-scan-item-sub">Notification envoyée</div>
+            </div>
+          </div>
+          <div class="auto-scan-item auto-scan-item--sent">
+            <span class="scan-check">✓</span>
+            <div>
+              <div class="auto-scan-item-title">Équipe 12 vs 31 — Terrain 1</div>
+              <div class="auto-scan-item-sub">Notification envoyée</div>
+            </div>
+          </div>
+          <div class="auto-scan-item auto-scan-item--pending">
+            <span class="scan-spin">↻</span>
+            <div>
+              <div class="auto-scan-item-title">Scan en cours…</div>
+              <div class="auto-scan-item-sub">Recherche de nouvelles parties</div>
+            </div>
+          </div>
+        </div>
+        <div class="auto-scan-footer">🔔 14 notifications envoyées aujourd'hui</div>
+      </div>
+      <!-- Text RIGHT -->
+      <div>
+        <p class="section-label" style="text-align:left">Fonctionnalité clé</p>
+        <h2 class="section-title" style="text-align:left">Appels automatiques</h2>
+        <p style="color:var(--text-muted); margin-bottom:1.5rem;">Si votre logiciel de gestion publie les résultats en ligne (ex : Gestion Concours), Notygo surveille automatiquement la page et déclenche les notifications dès qu'une nouvelle partie apparaît — sans intervention de votre part.</p>
+        <ul style="list-style:none; display:flex; flex-direction:column; gap:0.75rem;">
+          <li style="display:flex;gap:10px;align-items:flex-start;"><span style="color:var(--gold);font-weight:700;flex-shrink:0;">✓</span><span>Compatible Gestion Concours et autres logiciels sportifs</span></li>
+          <li style="display:flex;gap:10px;align-items:flex-start;"><span style="color:var(--gold);font-weight:700;flex-shrink:0;">✓</span><span>Scan toutes les 30 secondes, zéro action requise</span></li>
+          <li style="display:flex;gap:10px;align-items:flex-start;"><span style="color:var(--gold);font-weight:700;flex-shrink:0;">✓</span><span>Nous vous accompagnons dans la configuration initiale</span></li>
+        </ul>
+        <p style="margin-top:1.25rem;"><a href="contact.html" style="color:var(--accent);font-weight:600;text-decoration:underline;">→ Vérifier la compatibilité avec votre logiciel</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DICTÉE VOCALE -->
+<section style="background: var(--surface);">
+  <div class="container">
+    <div class="feat-showcase">
+      <!-- Text LEFT -->
+      <div>
+        <p class="section-label" style="text-align:left">Fonctionnalité clé</p>
+        <h2 class="section-title" style="text-align:left">Dictée vocale</h2>
+        <p style="color:var(--text-muted); margin-bottom:1.5rem;">Appelez une partie mains libres en parlant naturellement dans votre téléphone. Notygo analyse votre voix, identifie les équipes et le terrain, remplit le formulaire et envoie la notification automatiquement.</p>
+        <ul style="list-style:none; display:flex; flex-direction:column; gap:0.75rem;">
+          <li style="display:flex;gap:10px;align-items:flex-start;"><span style="color:var(--gold);font-weight:700;flex-shrink:0;">✓</span><span>Parlez naturellement : "équipe 42 contre 57, terrain 3"</span></li>
+          <li style="display:flex;gap:10px;align-items:flex-start;"><span style="color:var(--gold);font-weight:700;flex-shrink:0;">✓</span><span>Détecte automatiquement numéros d'équipes et terrain</span></li>
+          <li style="display:flex;gap:10px;align-items:flex-start;"><span style="color:var(--gold);font-weight:700;flex-shrink:0;">✓</span><span>Idéal pour gérer un concours seul, les mains occupées</span></li>
+        </ul>
+      </div>
+      <!-- Visual RIGHT -->
+      <div class="voice-mock">
+        <div class="voice-mock-label">🎤 Écoute en cours…</div>
+        <div class="voice-waves">
+          <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+        </div>
+        <div class="voice-transcript">"équipe 42 contre 57, terrain 3"</div>
+        <div class="voice-parsed">
+          <div class="voice-parsed-row"><span>Équipe A</span><strong>42</strong></div>
+          <div class="voice-parsed-row"><span>Équipe B</span><strong>57</strong></div>
+          <div class="voice-parsed-row"><span>Terrain</span><strong>3</strong></div>
+        </div>
+        <div class="voice-send-btn">Envoyer la notification ✓</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GRILLE FEATURES -->
+<section>
+  <div class="container">
+    <p class="section-label">Vue d'ensemble</p>
+    <h2 class="section-title">Toutes les fonctionnalités</h2>
+    <div class="features-grid">
+
+      <div class="feature-card">
+        <div class="feature-icon">🤖</div>
+        <h3>Appels automatiques</h3>
+        <p>Si votre logiciel de gestion publie les résultats en ligne (ex : Gestion Concours), Notygo scanne automatiquement cette page et notifie les joueurs à chaque nouvelle partie. Nous vous accompagnons dans la configuration.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">🎤</div>
+        <h3>Dictée vocale</h3>
+        <p>Appelez une partie en parlant dans votre microphone. Notygo analyse automatiquement "équipe 42 contre 57 terrain 3" et remplit le formulaire. Idéal pour appeler les parties mains libres.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">📺</div>
+        <h3>Écran TV temps réel</h3>
+        <p>Connectez un écran TV à votre salle et affichez en temps réel les parties en cours. La mise à jour est instantanée dès qu'une partie est appelée.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">📱</div>
+        <h3>QR Code d'inscription</h3>
+        <p>Générez et imprimez le QR code de votre concours. Les joueurs le scannent avec leur téléphone, choisissent leur équipe et s'abonnent aux notifications en 10 secondes.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">🏆</div>
+        <h3>Gestion des scores</h3>
+        <p>À la fin d'une partie, une équipe saisit le score depuis son téléphone. L'équipe adverse reçoit une notification pour valider ou contester le score.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">🌍</div>
+        <h3>Gestion des terrains</h3>
+        <p>Suivez en temps réel le statut de chaque terrain : libre, en jeu, en pause, terminé. Optimisez l'utilisation de vos installations tout au long de la journée.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">📢</div>
+        <h3>Annonces générales</h3>
+        <p>Envoyez un message à tous les joueurs simultanément : "Le concours reprend dans 10 minutes", "Pause déjeuner jusqu'à 14h"... Tout le monde est informé instantanément.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">🎯</div>
+        <h3>Gestion des sponsors</h3>
+        <p>Affichez les logos et informations de vos partenaires directement sur la page joueur. Suivez les clics et l'engagement en temps réel.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">👨‍⚖️</div>
+        <h3>Interface arbitre</h3>
+        <p>Les arbitres disposent d'un accès dédié pour appeler les parties et recevoir eux aussi des notifications, sans avoir les droits complets d'organisateur.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">🔗</div>
+        <h3>API externe</h3>
+        <p>Connectez Notygo à vos logiciels de gestion sportive via l'API. Disponible sur demande — contactez-nous pour vérifier la compatibilité avec votre système.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">📊</div>
+        <h3>Statistiques</h3>
+        <p>Consultez le nombre de notifications envoyées, les joueurs inscrits, les scores validés et l'historique complet de vos concours.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">🗺️</div>
+        <h3>Plan du site</h3>
+        <p>Uploadez le plan de votre salle ou terrain. Les joueurs peuvent le consulter directement depuis leur téléphone pour trouver leur terrain.</p>
+      </div>
+
+      <div class="feature-card feature-card-new">
+        <div class="feature-icon">🧍</div>
+        <h3>Mode Solo / Individuel <span class="feature-new-badge">Nouveau</span></h3>
+        <p>Appelez un athlète individuel sur une zone sans adversaire. Idéal pour l'escalade, le crossfit, le tir, la natation ou toute compétition par passages. L'athlète reçoit sa notification avec son programme de la journée.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container">
+    <h2>Essayez Notygo gratuitement</h2>
+    <p>Créez votre premier concours en moins de 2 minutes. Aucune carte bancaire requise.</p>
+    <div class="hero-ctas">
+      <a href="https://notygo.app/register" class="btn-primary">Créer un compte gratuit →</a>
+      <a href="tarifs.html" class="btn-secondary">Voir les tarifs</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="/" class="footer-logo"><img src="/images/logo-white.png" alt="Notygo" width="105" height="32" loading="lazy"></a>
+      <p>La plateforme de gestion d'appels pour concours sportifs. Notifications push instantanées sur iOS et Android.</p>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/notygo_fr/" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+        <a href="https://www.facebook.com/notygo.fr/" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+        <a href="https://www.youtube.com/@notygo_fr" target="_blank" rel="noopener" aria-label="YouTube">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
+        </a>
+        <a href="https://www.tiktok.com/@notygo_fr" target="_blank" rel="noopener" aria-label="TikTok">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Produit</h4>
+      <ul>
+        <li><a href="fonctionnement.html">Comment ça marche</a></li>
+      <li><a href="fonctionnalites.html">Fonctionnalités</a></li>
+        <li><a href="tarifs.html">Tarifs</a></li>
+        <li><a href="https://notygo.app/register">Créer un compte</a></li>
+        <li><a href="https://notygo.app/login">Se connecter</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Ressources</h4>
+      <ul>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Sports</h4>
+      <ul>
+        <li><a href="petanque.html">Pétanque</a></li>
+        <li><a href="tennis.html">Tennis</a></li>
+        <li><a href="basket.html">Basket</a></li>
+        <li><a href="sports.html">Tous les sports</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 SASU SEVEN COMWEB. Tous droits réservés.</span>
+    <div style="display:flex; gap:1.5rem;">
+      <a href="mentions-legales.html">Mentions légales</a>
+      <a href="confidentialite.html">Confidentialité</a>
+      <a href="cgu.html">CGU</a>
+      <a href="cgv.html">CGV</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function openMobileMenu() { document.getElementById('mobileMenu').classList.add('open'); }
+  function closeMobileMenu() { document.getElementById('mobileMenu').classList.remove('open'); }
+</script>
+
+<!-- BANDEAU COOKIE RGPD -->
+<div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#0A1F44;color:white;padding:1rem 2rem;z-index:9999;box-shadow:0 -4px 20px rgba(0,0,0,0.3);">
+  <div style="max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;">
+    <p style="margin:0;font-size:0.875rem;color:rgba(255,255,255,0.85);flex:1;min-width:260px;">
+      🍪 Ce site utilise uniquement des cookies techniques nécessaires à son fonctionnement. Aucun cookie publicitaire ou de traçage.
+      <a href="confidentialite.html" style="color:#FE5536;text-decoration:underline;margin-left:4px;">En savoir plus</a>
+    </p>
+    <div style="display:flex;gap:0.75rem;flex-shrink:0;">
+      <button onclick="acceptCookies()" style="background:#FE5536;color:white;border:none;padding:9px 20px;border-radius:6px;font-weight:700;font-size:0.875rem;cursor:pointer;">J'accepte</button>
+      <button onclick="refuseCookies()" style="background:transparent;color:rgba(255,255,255,0.7);border:1px solid rgba(255,255,255,0.3);padding:9px 20px;border-radius:6px;font-size:0.875rem;cursor:pointer;">Refuser</button>
+    </div>
+  </div>
+</div>
+<script>
+  (function(){ if(!localStorage.getItem("cookie_consent")){ document.getElementById("cookie-banner").style.display="block"; } })();
+  function acceptCookies(){ localStorage.setItem("cookie_consent","accepted"); document.getElementById("cookie-banner").style.display="none"; }
+  function refuseCookies(){ localStorage.setItem("cookie_consent","refused"); document.getElementById("cookie-banner").style.display="none"; }
+</script>
+</body>
+</html>

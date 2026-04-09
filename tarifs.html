@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tarifs — Notygo</title>
+  <meta name="description" content="Tarifs Notygo : plan Starter gratuit, Club à 10€/mois, Business à 36€/mois. Gérez vos concours sportifs avec notifications push instantanées.">
+  <meta property="og:title" content="Tarifs — Notygo">
+  <meta property="og:description" content="Tarifs Notygo : plan Starter gratuit, Club à 10€/mois, Business à 36€/mois. Gérez vos concours sportifs avec notifications push instantanées.">
+  <meta property="og:url" content="https://notygo.fr/tarifs.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Notygo">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:image" content="https://notygo.fr/images/Logo.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Tarifs — Notygo">
+  <meta name="twitter:description" content="Tarifs Notygo : plan Starter gratuit, Club à 10€/mois, Business à 36€/mois. Gérez vos concours sportifs avec notifications push instantanées.">
+  <meta name="twitter:image" content="https://notygo.fr/images/Logo.png">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://notygo.fr/tarifs.html">
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+  <link rel="shortcut icon" href="/images/favicon.svg">
+  <link rel="stylesheet" href="/style.css?v=3">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Le plan Starter est-il vraiment gratuit ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Oui, totalement gratuit et sans limite de durée. Aucune carte bancaire n'est requise. Le plan Starter permet de gérer 1 concours actif à la fois avec les fonctionnalités essentielles."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Quelle est la différence entre Club et Business ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Le plan Club permet de gérer jusqu'à 3 concours simultanément. Le plan Business est sans limite de concours simultanés et inclut en plus les statistiques avancées, l'API externe et l'export des données."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Qu'est-ce que le plan Événement ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Le plan Événement est un paiement unique de 30€ TTC pour un seul événement. Idéal pour les compétitions ponctuelles, il donne accès à toutes les fonctionnalités Club + Sponsors pour la durée de votre événement, sans abonnement."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Les joueurs doivent-ils télécharger une application ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Non, pour recevoir les notifications il suffit d'un navigateur web compatible (Chrome, Firefox, Safari sur iOS 16.4+). Les joueurs scannent le QR code et s'abonnent en quelques secondes. Notygo est compatible iOS et Android."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Comment fonctionnent les appels automatiques ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Si votre logiciel de gestion sportive publie les résultats en ligne, Notygo peut scanner automatiquement cette page et détecter les nouvelles parties. Les joueurs sont notifiés sans aucune action de votre part."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Notygo fonctionne-t-il sur iPhone ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Oui. Les notifications push fonctionnent sur iOS 16.4 et versions supérieures via Safari. Les joueurs peuvent ajouter Notygo à leur écran d'accueil via Partager → Sur l'écran d'accueil."
+        }
+      }
+    ]
+  }
+  </script>
+  <style>
+    .comparison-table { width: 100%; border-collapse: collapse; margin-top: 3rem; }
+    .comparison-table th, .comparison-table td { padding: 12px 16px; text-align: center; border-bottom: 1px solid var(--border); font-size: 0.875rem; }
+    .comparison-table td:first-child { text-align: left; font-weight: 500; }
+    .comparison-table th { background: var(--navy); color: white; font-weight: 700; }
+    .comparison-table th:first-child { border-radius: 8px 0 0 0; text-align: left; }
+    .comparison-table th:last-child { border-radius: 0 8px 0 0; }
+    .comparison-table tr:hover td { background: var(--bg); }
+    .comparison-table .section-row td { background: var(--bg); font-weight: 700; color: var(--navy); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; padding: 10px 16px; }
+    .check-yes { color: #22c55e; font-weight: 700; font-size: 1rem; }
+    .check-no { color: #cbd5e1; }
+    .faq-item { border: 1px solid var(--border); border-radius: 12px; margin-bottom: 1rem; overflow: hidden; }
+    .faq-question { padding: 1.25rem 1.5rem; font-weight: 700; cursor: pointer; display: flex; justify-content: space-between; align-items: center; background: var(--surface); }
+    .faq-answer { display: none; padding: 0 1.5rem 1.25rem; color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; }
+    .faq-item.open .faq-answer { display: block; }
+    .faq-item.open .faq-question span { transform: rotate(45deg); display: inline-block; }
+    /* Toggle billing — segmented button */
+    .billing-toggle { display: flex; align-items: center; justify-content: center; margin-bottom: 2.5rem; }
+    .billing-seg { display: inline-flex; background: #f1f5f9; border-radius: 10px; padding: 4px; gap: 4px; }
+    .billing-btn { padding: 9px 22px; border-radius: 7px; border: none; font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: all 0.2s; color: var(--text-muted); background: transparent; white-space: nowrap; }
+    .billing-btn.active { background: var(--navy); color: white; box-shadow: 0 2px 8px rgba(10,31,68,0.18); }
+    .save-badge { display: inline-block; background: rgba(34,197,94,0.15); color: #16a34a; font-size: 0.7rem; font-weight: 700; padding: 2px 8px; border-radius: 999px; margin-left: 6px; white-space: nowrap; }
+    /* Grille 4 plans */
+    .pricing-grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; }
+    @media (max-width: 1024px) { .pricing-grid-4 { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 560px) { .pricing-grid-4 { grid-template-columns: 1fr; } }
+    .pricing-for { font-size: 0.78rem; color: var(--text-muted); font-weight: 500; margin-top: -0.25rem; margin-bottom: 0.75rem; }
+  </style>
+</head>
+<body>
+
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu-header">
+    <a href="/" class="nav-logo"><img src="/images/logo-white.png" alt="Notygo" width="118" height="36"></a>
+    <button class="mobile-menu-close" onclick="closeMobileMenu()">✕</button>
+  </div>
+  <nav>
+    <a href="/">Accueil</a>
+    <a href="fonctionnement.html">Comment ça marche</a>
+    <a href="fonctionnalites.html">Fonctionnalités</a>
+    <a href="tarifs.html">Tarifs</a>
+    <a href="blog.html">Blog</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <div class="mobile-menu-ctas">
+    <a href="https://notygo.app/login" style="background:rgba(255,255,255,0.1);color:white;border:1px solid rgba(255,255,255,0.3);">Se connecter</a>
+    <a href="https://notygo.app/register" style="background:#FF6422;color:white;">Créer un compte gratuit</a>
+  </div>
+</div>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-logo"><img src="/images/logo-white.png" alt="Notygo" width="118" height="36"></a>
+    <ul class="nav-links">
+      <li><a href="/">Accueil</a></li>
+      <li><a href="fonctionnement.html">Comment ça marche</a></li>
+      <li><a href="fonctionnalites.html">Fonctionnalités</a></li>
+      <li><a href="tarifs.html" class="active">Tarifs</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-ctas">
+      <a href="https://notygo.app/login" class="btn-nav-login">Se connecter</a>
+      <a href="https://notygo.app/register" class="btn-nav-register">Créer un compte</a>
+    </div>
+    <button class="nav-burger" onclick="openMobileMenu()">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="container">
+    <h1>Tarifs simples et transparents</h1>
+    <p>Commencez gratuitement. Évoluez selon vos besoins.</p>
+  </div>
+</section>
+
+<!-- PLANS -->
+<section style="background: var(--surface);">
+  <div class="container">
+
+    <!-- Toggle mensuel / annuel -->
+    <div class="billing-toggle">
+      <div class="billing-seg">
+        <button class="billing-btn active" id="btn-monthly" onclick="setBilling(false)">Mensuel</button>
+        <button class="billing-btn" id="btn-annual" onclick="setBilling(true)">Annuel <span class="save-badge">2 mois offerts</span></button>
+      </div>
+    </div>
+
+    <div class="pricing-grid-4">
+
+      <!-- STARTER -->
+      <div class="pricing-card">
+        <div class="pricing-name">Starter</div>
+        <div class="pricing-for">Pour tester &amp; découvrir Notygo</div>
+        <div class="pricing-price">0<sup>€</sup></div>
+        <div class="pricing-period">Pour toujours, sans carte bancaire</div>
+        <ul class="pricing-features">
+          <li>1 concours (délai 6 mois entre chaque)</li>
+          <li>Notifications push illimitées</li>
+          <li>QR code joueur</li>
+          <li>Écran TV temps réel</li>
+          <li>Appel manuel &amp; mode solo</li>
+          <li>Historique 30 jours</li>
+        </ul>
+        <a href="https://notygo.app/register" class="btn-pricing btn-pricing-secondary">Commencer gratuitement</a>
+      </div>
+
+      <!-- CLUB -->
+      <div class="pricing-card featured">
+        <div class="pricing-badge">Idéal pour les clubs</div>
+        <div class="pricing-name">Club</div>
+        <div class="pricing-for">Pour les clubs qui organisent régulièrement</div>
+        <div class="pricing-price"><sup>€</sup><span id="club-price">10</span></div>
+        <div class="pricing-period" id="club-period">par mois · engagement 1 an</div>
+        <div style="font-size:0.75rem;color:var(--text-muted);margin-bottom:1rem;" id="club-detail">ou 100 € / an en paiement unique</div>
+        <ul class="pricing-features">
+          <li>3 concours simultanés</li>
+          <li>Notifications push illimitées</li>
+          <li>Appels automatiques</li>
+          <li>Dictée vocale</li>
+          <li>Gestion des scores &amp; terrains</li>
+          <li>Annonces générales</li>
+          <li>Sponsors, arbitre, plan du site</li>
+          <li>Stats, export &amp; API externe</li>
+          <li>Historique 1 an</li>
+        </ul>
+        <a href="https://notygo.app/register" class="btn-pricing btn-pricing-primary">Choisir Club</a>
+      </div>
+
+      <!-- BUSINESS -->
+      <div class="pricing-card featured" style="border-color:var(--gold);">
+        <div class="pricing-badge" style="background:var(--gold);color:white;">Sans limite</div>
+        <div class="pricing-name">Business</div>
+        <div class="pricing-for">Pour les fédérations &amp; grandes structures</div>
+        <div class="pricing-price"><sup>€</sup><span id="business-price">30</span></div>
+        <div class="pricing-period" id="business-period">par mois HT · engagement 1 an</div>
+        <div style="font-size:0.75rem;color:var(--text-muted);margin-bottom:1rem;" id="business-detail">ou 300 € HT / an en paiement unique</div>
+        <ul class="pricing-features">
+          <li>Concours simultanés illimités</li>
+          <li>Tout le plan Club</li>
+          <li>API externe</li>
+          <li>Historique illimité</li>
+        </ul>
+        <a href="https://notygo.app/register" class="btn-pricing btn-pricing-primary" style="background:var(--gold);color:white;">Choisir Business</a>
+      </div>
+
+      <!-- ÉVÉNEMENT -->
+      <div class="pricing-card">
+        <div class="pricing-name">Événement</div>
+        <div class="pricing-for">Pour un tournoi ponctuel, sans abonnement</div>
+        <div class="pricing-price"><sup>€</sup>30</div>
+        <div class="pricing-period">par événement · paiement unique</div>
+        <div style="font-size:0.75rem;color:var(--text-muted);margin-bottom:1rem;">Accès actif le temps de l'événement</div>
+        <ul class="pricing-features">
+          <li>3 concours simultanés</li>
+          <li>Notifications push illimitées</li>
+          <li>Dictée vocale</li>
+          <li>Gestion des scores &amp; terrains</li>
+          <li>Annonces générales</li>
+          <li>Sponsors, arbitre, plan du site</li>
+          <li>Idéal pour tournois ponctuels</li>
+        </ul>
+        <a href="https://notygo.app/register" class="btn-pricing btn-pricing-secondary">Choisir Événement</a>
+      </div>
+
+    </div>
+
+    <p style="text-align:center; color:var(--text-muted); font-size:0.8rem; margin-top:1.5rem;">
+      Tous les prix sont TTC. Plans Club et Business : engagement 1 an, paiement mensuel ou annuel.
+    </p>
+  </div>
+</section>
+
+<!-- TABLEAU COMPARATIF -->
+<section>
+  <div class="container">
+    <p class="section-label">Comparatif détaillé</p>
+    <h2 class="section-title">Que comprend chaque plan ?</h2>
+
+    <div style="overflow-x:auto;">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Fonctionnalité</th>
+            <th>Starter</th>
+            <th>Club</th>
+            <th>Business</th>
+            <th>Événement</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="section-row"><td colspan="5">Limites</td></tr>
+          <tr>
+            <td>Concours simultanés</td>
+            <td>1</td>
+            <td>3</td>
+            <td>Illimités</td>
+            <td>3</td>
+          </tr>
+          <tr>
+            <td>Délai entre concours</td>
+            <td>6 mois</td>
+            <td class="check-no">—</td>
+            <td class="check-no">—</td>
+            <td class="check-no">—</td>
+          </tr>
+          <tr>
+            <td>Historique</td>
+            <td>30 jours</td>
+            <td>1 an</td>
+            <td>Illimité</td>
+            <td>Durée événement</td>
+          </tr>
+
+          <tr class="section-row"><td colspan="5">Notifications &amp; Appels</td></tr>
+          <tr>
+            <td>Notifications push illimitées</td>
+            <td class="check-yes">✓</td><td class="check-yes">✓</td><td class="check-yes">✓</td><td class="check-yes">✓</td>
+          </tr>
+          <tr>
+            <td>Appel manuel des parties</td>
+            <td class="check-yes">✓</td><td class="check-yes">✓</td><td class="check-yes">✓</td><td class="check-yes">✓</td>
+          </tr>
+          <tr>
+            <td>Mode Solo / Individuel</td>
+            <td class="check-yes">✓</td><td class="check-yes">✓</td><td class="check-yes">✓</td><td class="check-yes">✓</td>
+          </tr>
+          <tr>
+            <td>Dictée vocale</td>
+            <td class="check-no">—</td><td class="check-yes">✓</td><td class="check-yes">✓</td><td class="check-yes">✓</td>
+          </tr>
+          <tr>
+            <td>Appels automatiques</td>
+            <td class="check-no">—</td><td class="check-yes">✓</td><td class="check-yes">✓</td><td class="check-no">—</td>
+          </tr>
+          <tr>
+            <td>Annonces générales</td>
+            <td class="check-no">—</td><td class="check-yes">✓</td><td class="check-yes">✓</td><td class="check-yes">✓</td>
+          </tr>
+
+          <tr class="section-row"><td colspan="5">Gestion du concours</td></tr>
+          <tr>
+            <td>QR code joueur</td>
+            <td class="check-yes">✓</td><td class="check-yes">✓</td><td class="check-yes">✓</td><td class="check-yes">✓</td>
+          </tr>
+          <tr>
+            <td>Écran TV temps réel</td>
+            <td class="check-yes">✓</td><td class="check-yes">✓</td><td class="check-yes">✓</td><td class="check-yes">✓</td>
+          </tr>
+          <tr>
+            <td>Gestion des terrains</td>
+            <td class="check-no">—</td><td class="check-yes">✓</td><td class="check-yes">✓</td><td class="check-yes">✓</td>
+          </tr>
+          <tr>
+            <td>Gestion des scores</td>
+            <td class="check-no">—</td><td class="check-yes">✓</td><td class="check-yes">✓</td><td class="check-yes">✓</td>
+          </tr>
+          <tr>
+            <td>Interface arbitre</td>
+            <td class="check-no">—</td><td class="check-yes">✓</td><td class="check-yes">✓</td><td class="check-yes">✓</td>
+          </tr>
+          <tr>
+            <td>Plan du site (upload image)</td>
+            <td class="check-no">—</td><td class="check-yes">✓</td><td class="check-yes">✓</td><td class="check-yes">✓</td>
+          </tr>
+          <tr>
+            <td>Sponsors (logo + lien)</td>
+            <td class="check-no">—</td><td class="check-yes">✓</td><td class="check-yes">✓</td><td class="check-yes">✓</td>
+          </tr>
+
+          <tr class="section-row"><td colspan="5">Avancé</td></tr>
+          <tr>
+            <td>Statistiques avancées</td>
+            <td class="check-no">—</td><td class="check-yes">✓</td><td class="check-yes">✓</td><td class="check-no">—</td>
+          </tr>
+          <tr>
+            <td>Export des données</td>
+            <td class="check-no">—</td><td class="check-yes">✓</td><td class="check-yes">✓</td><td class="check-no">—</td>
+          </tr>
+          <tr>
+            <td>API externe</td>
+            <td class="check-no">—</td><td class="check-yes">✓</td><td class="check-yes">✓</td><td class="check-no">—</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section style="background: var(--surface);">
+  <div class="container" style="max-width:800px;">
+    <p class="section-label">Questions fréquentes</p>
+    <h2 class="section-title">FAQ</h2>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">Le plan Starter est-il vraiment gratuit ?<span>+</span></div>
+      <div class="faq-answer">Oui, totalement gratuit et sans limite de durée. Aucune carte bancaire n'est requise. Le plan Starter permet de gérer 1 concours actif à la fois avec les fonctionnalités essentielles.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">Quelle est la différence entre Club et Business ?<span>+</span></div>
+      <div class="faq-answer">Le plan Club permet de gérer jusqu'à 3 concours simultanément avec toutes les fonctionnalités. Le plan Business est sans limite de concours simultanés et inclut en plus l'API externe et un historique illimité.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">Qu'est-ce que le plan Événement ?<span>+</span></div>
+      <div class="faq-answer">Le plan Événement est un paiement unique de 30 € TTC pour un seul événement. Il donne accès à toutes les fonctionnalités Club + Sponsors pour la durée de votre compétition, sans abonnement. Idéal pour les tournois ponctuels.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">Qu'est-ce que l'engagement 1 an ?<span>+</span></div>
+      <div class="faq-answer">Les plans Club et Business sont proposés en engagement 1 an, avec le choix entre un paiement mensuel (plus flexible) ou un paiement annuel en une fois (jusqu'à 2 mois offerts). L'accès reste actif pendant toute la durée souscrite.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">Comment fonctionnent les appels automatiques ?<span>+</span></div>
+      <div class="faq-answer">Si votre logiciel de gestion (ex : Gestion Concours) publie les résultats en ligne, Notygo peut scanner automatiquement cette page et notifier les joueurs à chaque nouvelle partie. Nous vous accompagnons dans la configuration.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">Les joueurs doivent-ils télécharger une application ?<span>+</span></div>
+      <div class="faq-answer">Non. Les notifications fonctionnent via le navigateur (Chrome, Firefox, Safari iOS 16.4+). Les joueurs scannent le QR code et s'abonnent en quelques secondes. Notygo est compatible iOS et Android.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">Notygo fonctionne-t-il sur iPhone ?<span>+</span></div>
+      <div class="faq-answer">Oui. Les notifications push fonctionnent sur iOS 16.4 et versions supérieures. Pour une expérience optimale, les joueurs peuvent ajouter Notygo à leur écran d'accueil via Safari : Partager → Sur l'écran d'accueil.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container">
+    <h2>Prêt à démarrer ?</h2>
+    <p>Créez votre compte gratuitement et testez Notygo dès aujourd'hui.</p>
+    <div class="hero-ctas">
+      <a href="https://notygo.app/register" class="btn-primary">Créer un compte gratuit →</a>
+      <a href="contact.html" class="btn-secondary">Une question ? Contactez-nous</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="/" class="footer-logo"><img src="/images/logo-white.png" alt="Notygo" width="105" height="32" loading="lazy"></a>
+      <p>La plateforme de gestion d'appels pour concours sportifs. Notifications push instantanées sur iOS et Android.</p>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/notygo_fr/" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+        <a href="https://www.facebook.com/notygo.fr/" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+        <a href="https://www.youtube.com/@notygo_fr" target="_blank" rel="noopener" aria-label="YouTube">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
+        </a>
+        <a href="https://www.tiktok.com/@notygo_fr" target="_blank" rel="noopener" aria-label="TikTok">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Produit</h4>
+      <ul>
+        <li><a href="fonctionnement.html">Comment ça marche</a></li>
+      <li><a href="fonctionnalites.html">Fonctionnalités</a></li>
+        <li><a href="tarifs.html">Tarifs</a></li>
+        <li><a href="https://notygo.app/register">Créer un compte</a></li>
+        <li><a href="https://notygo.app/login">Se connecter</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Ressources</h4>
+      <ul>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Sports</h4>
+      <ul>
+        <li><a href="petanque.html">Pétanque</a></li>
+        <li><a href="tennis.html">Tennis</a></li>
+        <li><a href="basket.html">Basket</a></li>
+        <li><a href="sports.html">Tous les sports</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 SASU SEVEN COMWEB. Tous droits réservés.</span>
+    <div style="display:flex; gap:1.5rem;">
+      <a href="mentions-legales.html">Mentions légales</a>
+      <a href="confidentialite.html">Confidentialité</a>
+      <a href="cgu.html">CGU</a>
+      <a href="cgv.html">CGV</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function openMobileMenu() { document.getElementById('mobileMenu').classList.add('open'); }
+  function closeMobileMenu() { document.getElementById('mobileMenu').classList.remove('open'); }
+
+  function setBilling(annual) {
+    var isAnnual = annual;
+    document.getElementById('btn-monthly').classList.toggle('active', !isAnnual);
+    document.getElementById('btn-annual').classList.toggle('active', isAnnual);
+
+    if (isAnnual) {
+      document.getElementById('club-price').textContent = '100';
+      document.getElementById('club-period').textContent = 'par an · engagement 1 an';
+      document.getElementById('club-detail').textContent = 'soit 8,33 € / mois — 2 mois offerts';
+      document.getElementById('business-price').textContent = '300';
+      document.getElementById('business-period').textContent = 'par an HT · engagement 1 an';
+      document.getElementById('business-detail').textContent = 'soit 25 € HT / mois — 2 mois offerts';
+    } else {
+      document.getElementById('club-price').textContent = '10';
+      document.getElementById('club-period').textContent = 'par mois · engagement 1 an';
+      document.getElementById('club-detail').textContent = 'ou 100 € / an en paiement unique';
+      document.getElementById('business-price').textContent = '30';
+      document.getElementById('business-period').textContent = 'par mois HT · engagement 1 an';
+      document.getElementById('business-detail').textContent = 'ou 300 € HT / an en paiement unique';
+    }
+  }
+
+
+  function toggleFaq(el) {
+    var item = el.parentElement;
+    item.classList.toggle('open');
+  }
+</script>
+
+<!-- BANDEAU COOKIE RGPD -->
+<div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#0A1F44;color:white;padding:1rem 2rem;z-index:9999;box-shadow:0 -4px 20px rgba(0,0,0,0.3);">
+  <div style="max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;">
+    <p style="margin:0;font-size:0.875rem;color:rgba(255,255,255,0.85);flex:1;min-width:260px;">
+      🍪 Ce site utilise uniquement des cookies techniques nécessaires à son fonctionnement. Aucun cookie publicitaire ou de traçage.
+      <a href="confidentialite.html" style="color:#FE5536;text-decoration:underline;margin-left:4px;">En savoir plus</a>
+    </p>
+    <div style="display:flex;gap:0.75rem;flex-shrink:0;">
+      <button onclick="acceptCookies()" style="background:#FE5536;color:white;border:none;padding:9px 20px;border-radius:6px;font-weight:700;font-size:0.875rem;cursor:pointer;">J'accepte</button>
+      <button onclick="refuseCookies()" style="background:transparent;color:rgba(255,255,255,0.7);border:1px solid rgba(255,255,255,0.3);padding:9px 20px;border-radius:6px;font-size:0.875rem;cursor:pointer;">Refuser</button>
+    </div>
+  </div>
+</div>
+<script>
+  (function(){ if(!localStorage.getItem("cookie_consent")){ document.getElementById("cookie-banner").style.display="block"; } })();
+  function acceptCookies(){ localStorage.setItem("cookie_consent","accepted"); document.getElementById("cookie-banner").style.display="none"; }
+  function refuseCookies(){ localStorage.setItem("cookie_consent","refused"); document.getElementById("cookie-banner").style.display="none"; }
+</script>
+</body>
+</html>

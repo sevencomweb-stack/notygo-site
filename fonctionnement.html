@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comment fonctionne Notygo — Organisateurs et joueurs</title>
+  <meta name="description" content="Découvrez comment Notygo fonctionne côté organisateur et côté joueur. Créez un concours en 30 secondes, envoyez des notifications push sans application à télécharger.">
+  <meta property="og:title" content="Comment fonctionne Notygo — Organisateurs et joueurs">
+  <meta property="og:description" content="Découvrez comment Notygo fonctionne côté organisateur et côté joueur.">
+  <meta property="og:url" content="https://notygo.fr/fonctionnement.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Notygo">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:image" content="https://notygo.fr/images/Logo.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Comment fonctionne Notygo — Organisateurs et joueurs">
+  <meta name="twitter:description" content="Découvrez comment Notygo fonctionne côté organisateur et côté joueur.">
+  <meta name="twitter:image" content="https://notygo.fr/images/Logo.png">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://notygo.fr/fonctionnement.html">
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+  <link rel="shortcut icon" href="/images/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="/style.css?v=3">
+  <style>
+    /* ── Tabs organisateur / joueur ── */
+    .tab-bar {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-bottom: 3.5rem;
+    }
+    .tab-btn {
+      padding: 11px 28px;
+      border-radius: 999px;
+      border: 2px solid var(--border);
+      background: var(--surface);
+      color: var(--text-muted);
+      font-weight: 700;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-family: var(--font-body);
+    }
+    .tab-btn.active {
+      background: var(--navy);
+      color: white;
+      border-color: var(--navy);
+    }
+    .tab-btn:not(.active):hover {
+      border-color: var(--navy);
+      color: var(--navy);
+    }
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+
+    /* ── Steps illustrés ── */
+    .how-steps { display: flex; flex-direction: column; gap: 0; }
+
+    .how-step {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      padding: 3.5rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .how-step:last-child { border-bottom: none; }
+    .how-step.reverse { direction: rtl; }
+    .how-step.reverse > * { direction: ltr; }
+
+    .how-step-text {}
+    .how-step-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px; height: 40px;
+      background: var(--accent);
+      color: white;
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: 1.1rem;
+      border-radius: 50%;
+      margin-bottom: 1rem;
+    }
+    .how-step h3 {
+      font-family: var(--font-display);
+      font-size: 1.7rem;
+      font-weight: 800;
+      color: var(--navy);
+      text-transform: uppercase;
+      letter-spacing: -0.3px;
+      margin-bottom: 0.75rem;
+      line-height: 1.1;
+    }
+    .how-step p {
+      color: var(--text-muted);
+      line-height: 1.75;
+      font-size: 0.95rem;
+      margin-bottom: 0.75rem;
+    }
+    .how-step ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+    }
+    .how-step ul li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 0.9rem;
+      color: var(--text);
+    }
+    .how-step ul li::before {
+      content: '→';
+      color: var(--accent);
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    /* ── Illustration screenshot ── */
+    .how-step-img {
+      border-radius: 20px;
+      aspect-ratio: 16/9;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 16px 48px rgba(0,0,0,0.12);
+      background: #f1f5f9;
+    }
+    .how-step-img img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+      border-radius: 20px;
+      display: block;
+      padding: 8px;
+      box-sizing: border-box;
+    }
+    .how-step-img .img-label {
+      position: absolute;
+      bottom: 1rem; left: 1rem;
+      background: rgba(0,0,0,0.5);
+      color: rgba(255,255,255,0.7);
+      font-size: 0.7rem;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-style: italic;
+    }
+
+    /* ── PWA steps (joueur) ── */
+    .pwa-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+    .pwa-card {
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.25rem 1.5rem;
+    }
+    .pwa-card h4 {
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 0.6rem;
+      font-size: 0.95rem;
+    }
+    .pwa-card ol {
+      padding-left: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+    .pwa-card ol li {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    @media (max-width: 768px) {
+      .how-step { grid-template-columns: 1fr; gap: 2rem; }
+      .how-step.reverse { direction: ltr; }
+      .pwa-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu-header">
+    <a href="/" class="nav-logo"><img src="/images/logo-white.png" alt="Notygo" width="118" height="36"></a>
+    <button class="mobile-menu-close" onclick="closeMobileMenu()">✕</button>
+  </div>
+  <nav>
+    <a href="/">Accueil</a>
+    <a href="fonctionnement.html">Comment ça marche</a>
+    <a href="fonctionnalites.html">Fonctionnalités</a>
+    <a href="tarifs.html">Tarifs</a>
+    <a href="blog.html">Blog</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <div class="mobile-menu-ctas">
+    <a href="https://notygo.app/login" style="background:rgba(255,255,255,0.1);color:white;border:1px solid rgba(255,255,255,0.3);">Se connecter</a>
+    <a href="https://notygo.app/register" style="background:var(--gold);color:white;">Créer un compte gratuit</a>
+  </div>
+</div>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-logo"><img src="/images/logo-white.png" alt="Notygo" width="118" height="36"></a>
+    <ul class="nav-links">
+      <li><a href="/">Accueil</a></li>
+      <li><a href="fonctionnement.html" class="active">Comment ça marche</a></li>
+      <li><a href="fonctionnalites.html">Fonctionnalités</a></li>
+      <li><a href="tarifs.html">Tarifs</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-ctas">
+      <a href="https://notygo.app/login" class="btn-nav-login">Se connecter</a>
+      <a href="https://notygo.app/register" class="btn-nav-register">Créer un compte</a>
+    </div>
+    <button class="nav-burger" onclick="openMobileMenu()">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="container">
+    <p class="section-label">Simplicité &amp; puissance</p>
+    <h1>Comment ça marche ?</h1>
+    <p>Deux expériences, un seul outil. Voici comment Notygo fonctionne pour l'organisateur et pour les joueurs.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+
+    <!-- Tabs -->
+    <div class="tab-bar">
+      <button class="tab-btn active" onclick="switchTab('organisateur', this)">🎛️ Je suis organisateur</button>
+      <button class="tab-btn" onclick="switchTab('joueur', this)">📱 Je suis joueur</button>
+    </div>
+
+    <!-- ═══════════════════════════════════
+         VUE ORGANISATEUR
+    ═══════════════════════════════════ -->
+    <div id="tab-organisateur" class="tab-panel active">
+      <div class="how-steps">
+
+        <div class="how-step reveal">
+          <div class="how-step-text">
+            <div class="how-step-number">1</div>
+            <h3>Créez votre concours en 30 secondes</h3>
+            <p>Depuis votre espace organisateur, créez un concours en quelques clics : donnez-lui un nom, choisissez le sport, configurez les terrains ou zones. Un QR code unique est généré automatiquement.</p>
+            <ul>
+              <li>Nom, sport, nombre de terrains</li>
+              <li>Mode équipe ou mode solo (athlètes individuels)</li>
+              <li>QR code prêt à imprimer ou afficher sur écran</li>
+            </ul>
+          </div>
+          <div class="how-step-img">
+            <img src="/images/screenshot-creation.png" alt="Création d'un concours Notygo">
+          </div>
+        </div>
+
+        <div class="how-step reverse reveal reveal-delay-1">
+          <div class="how-step-text">
+            <div class="how-step-number">2</div>
+            <h3>Appelez les parties à votre façon</h3>
+            <p>Choisissez la méthode qui vous convient le mieux selon votre concours :</p>
+            <ul>
+              <li><strong>Manuel</strong> : saisissez l'équipe A, l'équipe B et le terrain</li>
+              <li><strong>Dictée vocale</strong> : parlez dans votre micro, Notygo remplit automatiquement</li>
+              <li><strong>Automatique via Geslico</strong> : Notygo surveille la page de résultats et notifie dès qu'une partie est publiée</li>
+              <li><strong>Planning programmé</strong> : préparez les rondes à l'avance, les notifications partent à l'heure</li>
+            </ul>
+          </div>
+          <div class="how-step-img">
+            <img src="/images/screenshot-appel.png" alt="Interface d'appel de partie">
+          </div>
+        </div>
+
+        <div class="how-step reveal reveal-delay-1">
+          <div class="how-step-text">
+            <div class="how-step-number">3</div>
+            <h3>Suivez le concours en temps réel</h3>
+            <p>Depuis votre tableau de bord, visualisez l'état de chaque terrain, les scores en cours de validation et les notifications envoyées. Si une équipe ne se présente pas, relancez-la en un tap.</p>
+            <ul>
+              <li>Statut de chaque terrain : libre, en jeu, en pause</li>
+              <li>Nombre de joueurs abonnés aux notifications</li>
+              <li>Historique des appels de la journée</li>
+              <li>Rappel d'équipe en cas de no-show</li>
+            </ul>
+          </div>
+          <div class="how-step-img">
+            <img src="/images/screenshot-dashboard.png" alt="Tableau de bord temps réel">
+          </div>
+        </div>
+
+        <div class="how-step reverse reveal reveal-delay-1">
+          <div class="how-step-text">
+            <div class="how-step-number">4</div>
+            <h3>Branchez un écran TV</h3>
+            <p>Connectez n'importe quel écran TV (via un simple navigateur web) pour afficher les parties en cours en direct dans la salle, au boulodrome ou à la buvette. L'affichage se met à jour automatiquement à chaque appel.</p>
+            <ul>
+              <li>Fonctionne sur n'importe quel écran avec un navigateur</li>
+              <li>Mise à jour instantanée, aucun rechargement manuel</li>
+              <li>Logo de votre club et vos sponsors affichés</li>
+            </ul>
+          </div>
+          <div class="how-step-img">
+            <img src="/images/screenshot-tv.png" alt="Affichage écran TV Notygo">
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════
+         VUE JOUEUR
+    ═══════════════════════════════════ -->
+    <div id="tab-joueur" class="tab-panel">
+      <div class="how-steps">
+
+        <div class="how-step reveal">
+          <div class="how-step-text">
+            <div class="how-step-number">1</div>
+            <h3>Scannez le QR code à l'entrée</h3>
+            <p>À votre arrivée au concours, scannez le QR code affiché à l'accueil avec l'appareil photo de votre téléphone. Pas besoin de télécharger une application — la page s'ouvre directement dans votre navigateur.</p>
+            <ul>
+              <li>Compatible tous les téléphones (iOS et Android)</li>
+              <li>Aucun téléchargement, aucun compte à créer</li>
+              <li>La page s'ouvre en 2 secondes</li>
+            </ul>
+          </div>
+          <div class="how-step-img">
+            <img src="/images/screenshot-qr.png" alt="Scan QR code joueur" onerror="this.style.display='none'">
+            📷
+            <span class="img-label">Scan du QR code</span>
+          </div>
+        </div>
+
+        <div class="how-step reverse reveal reveal-delay-1">
+          <div class="how-step-text">
+            <div class="how-step-number">2</div>
+            <h3>Choisissez votre équipe</h3>
+            <p>Sur la page du concours, tapez votre numéro d'équipe (ou votre nom en mode solo). Notygo vous abonne aux notifications de cette équipe uniquement — vous ne recevrez que les appels qui vous concernent.</p>
+            <ul>
+              <li>Mode équipe : entrez votre numéro d'équipe</li>
+              <li>Mode solo : entrez votre nom ou numéro de dossard</li>
+              <li>Un seul joueur par équipe suffit pour abonner toute l'équipe</li>
+            </ul>
+          </div>
+          <div class="how-step-img">
+            <img src="/images/screenshot-inscription.png" alt="Inscription équipe joueur" onerror="this.style.display='none'">
+            ✏️
+            <span class="img-label">Saisie du numéro d'équipe</span>
+          </div>
+        </div>
+
+        <div class="how-step reveal reveal-delay-1">
+          <div class="how-step-text">
+            <div class="how-step-number">3</div>
+            <h3>Recevez votre notification</h3>
+            <p>Dès que l'organisateur appelle votre partie, vous recevez une notification push directement sur votre téléphone — même si l'écran est verrouillé ou que vous êtes en train d'utiliser une autre application.</p>
+            <ul>
+              <li>Notification avec le terrain assigné et l'adversaire</li>
+              <li>Reçue même écran verrouillé</li>
+              <li>Rappel automatique si vous ne vous présentez pas</li>
+            </ul>
+          </div>
+          <div class="how-step-img">
+            <img src="/images/screenshot-notif.png" alt="Notification push reçue sur téléphone" onerror="this.style.display='none'">
+            🔔
+            <span class="img-label">Notification sur l'écran de verrouillage</span>
+          </div>
+        </div>
+
+        <!-- PWA explication -->
+        <div class="how-step reverse reveal reveal-delay-1">
+          <div class="how-step-text">
+            <div class="how-step-number">4</div>
+            <h3>Ajoutez Notygo à votre écran d'accueil</h3>
+            <p>Pour activer les notifications push (surtout sur iPhone), ajoutez Notygo à votre écran d'accueil comme une vraie application. C'est gratuit, instantané, et ne prend pas de place — aucun téléchargement sur l'App Store.</p>
+            <div class="pwa-grid" style="margin-top:1.25rem;">
+              <div class="pwa-card">
+                <h4>🤖 Android (Chrome)</h4>
+                <ol>
+                  <li>Scannez le QR code du concours</li>
+                  <li>Chrome affiche une bannière en bas : <strong>« Installer »</strong></li>
+                  <li>Appuyez sur Installer → c'est fait</li>
+                </ol>
+              </div>
+              <div class="pwa-card">
+                <h4>🍎 iPhone / iPad (Safari)</h4>
+                <ol>
+                  <li>Ouvrez le lien dans <strong>Safari</strong></li>
+                  <li>Appuyez sur ⬆️ Partager en bas de l'écran</li>
+                  <li>Sélectionnez <strong>« Sur l'écran d'accueil »</strong></li>
+                  <li>Confirmez → Notygo est installé</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+          <div class="how-step-img">
+            <img src="/images/screenshot-install.png" alt="Installation PWA Notygo sur iPhone et Android" onerror="this.style.display='none'">
+            📲
+            <span class="img-label">Ajout à l'écran d'accueil</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SECTION CHIFFRES -->
+<section style="background: var(--surface-2);">
+  <div class="container">
+    <p class="section-label">En chiffres</p>
+    <h2 class="section-title">Simple et rapide</h2>
+    <div class="steps" style="margin-top:2.5rem;">
+      <div class="step reveal reveal-delay-1">
+        <div class="step-number" style="background:var(--accent);">30s</div>
+        <h3>Pour créer un concours</h3>
+        <p>Nom, sport, terrains. Le QR code est prêt immédiatement.</p>
+      </div>
+      <div class="step reveal reveal-delay-2">
+        <div class="step-number" style="background:var(--accent);">10s</div>
+        <h3>Pour s'abonner côté joueur</h3>
+        <p>Scanner, saisir son numéro, valider. Moins de 10 secondes.</p>
+      </div>
+      <div class="step reveal reveal-delay-3">
+        <div class="step-number" style="background:var(--accent);">0</div>
+        <h3>Téléchargement requis</h3>
+        <p>Aucune app à installer depuis l'App Store ou Google Play.</p>
+      </div>
+      <div class="step reveal reveal-delay-4">
+        <div class="step-number" style="background:var(--accent);">∞</div>
+        <h3>Notifications incluses</h3>
+        <p>Aucune limite sur le nombre de notifications envoyées.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="container">
+    <h2>Prêt à essayer ?</h2>
+    <p>Créez votre compte gratuitement et lancez votre premier concours en moins de 2 minutes.</p>
+    <div class="hero-ctas">
+      <a href="https://notygo.app/register" class="btn-primary">Créer un compte gratuit →</a>
+      <a href="fonctionnalites.html" class="btn-secondary">Toutes les fonctionnalités</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="/" class="footer-logo"><img src="/images/logo-white.png" alt="Notygo" width="105" height="32" loading="lazy"></a>
+      <p>La plateforme de gestion d'appels pour concours sportifs. Notifications push instantanées sur iOS et Android.</p>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/notygo_fr/" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+        <a href="https://www.facebook.com/notygo.fr/" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+        <a href="https://www.youtube.com/@notygo_fr" target="_blank" rel="noopener" aria-label="YouTube">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
+        </a>
+        <a href="https://www.tiktok.com/@notygo_fr" target="_blank" rel="noopener" aria-label="TikTok">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Produit</h4>
+      <ul>
+        <li><a href="fonctionnement.html">Comment ça marche</a></li>
+        <li><a href="fonctionnalites.html">Fonctionnalités</a></li>
+        <li><a href="tarifs.html">Tarifs</a></li>
+        <li><a href="https://notygo.app/register">Créer un compte</a></li>
+        <li><a href="https://notygo.app/login">Se connecter</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Ressources</h4>
+      <ul>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Sports</h4>
+      <ul>
+        <li><a href="petanque.html">Pétanque</a></li>
+        <li><a href="tennis.html">Tennis</a></li>
+        <li><a href="basket.html">Basket</a></li>
+        <li><a href="sports.html">Tous les sports</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 SASU SEVEN COMWEB. Tous droits réservés.</span>
+    <div style="display:flex; gap:1.5rem;">
+      <a href="mentions-legales.html">Mentions légales</a>
+      <a href="confidentialite.html">Confidentialité</a>
+      <a href="cgu.html">CGU</a>
+      <a href="cgv.html">CGV</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function openMobileMenu() { document.getElementById('mobileMenu').classList.add('open'); }
+  function closeMobileMenu() { document.getElementById('mobileMenu').classList.remove('open'); }
+
+  function switchTab(id, btn) {
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('tab-' + id).classList.add('active');
+    btn.classList.add('active');
+    document.querySelectorAll('#tab-' + id + ' .reveal').forEach(el => {
+      el.classList.remove('visible');
+      setTimeout(() => el.classList.add('visible'), 50);
+    });
+  }
+
+  // Ouvrir l'onglet joueur si l'URL contient #joueur
+  window.addEventListener('DOMContentLoaded', function() {
+    if (window.location.hash === '#joueur') {
+      switchTab('joueur', document.querySelectorAll('.tab-btn')[1]);
+      document.querySelector('.tab-bar').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+</script>
+<script src="/animations.js" defer></script>
+
+<!-- BANDEAU COOKIE RGPD -->
+<div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#0A1F44;color:white;padding:1rem 2rem;z-index:9999;box-shadow:0 -4px 20px rgba(0,0,0,0.3);">
+  <div style="max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;">
+    <p style="margin:0;font-size:0.875rem;color:rgba(255,255,255,0.85);flex:1;min-width:260px;">
+      🍪 Ce site utilise uniquement des cookies techniques nécessaires à son fonctionnement. Aucun cookie publicitaire ou de traçage.
+      <a href="confidentialite.html" style="color:var(--gold);text-decoration:underline;margin-left:4px;">En savoir plus</a>
+    </p>
+    <div style="display:flex;gap:0.75rem;flex-shrink:0;">
+      <button onclick="acceptCookies()" style="background:var(--accent);color:white;border:none;padding:9px 20px;border-radius:6px;font-weight:700;font-size:0.875rem;cursor:pointer;">J'accepte</button>
+      <button onclick="refuseCookies()" style="background:transparent;color:rgba(255,255,255,0.7);border:1px solid rgba(255,255,255,0.3);padding:9px 20px;border-radius:6px;font-size:0.875rem;cursor:pointer;">Refuser</button>
+    </div>
+  </div>
+</div>
+<script>
+  (function(){ if(!localStorage.getItem("cookie_consent")){ document.getElementById("cookie-banner").style.display="block"; } })();
+  function acceptCookies(){ localStorage.setItem("cookie_consent","accepted"); document.getElementById("cookie-banner").style.display="none"; }
+  function refuseCookies(){ localStorage.setItem("cookie_consent","refused"); document.getElementById("cookie-banner").style.display="none"; }
+</script>
+</body>
+</html>

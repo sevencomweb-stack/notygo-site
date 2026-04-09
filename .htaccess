@@ -1,0 +1,30 @@
+# Notygo.fr — Configuration Apache Hostinger
+
+# Redirection www → non-www (version canonique : notygo.fr)
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^www\.notygo\.fr$ [NC]
+RewriteRule ^(.*)$ https://notygo.fr/$1 [R=301,L]
+
+# Encodage par défaut
+AddDefaultCharset UTF-8
+
+# Content Security Policy
+Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.notygo.app https://notygo.app; frame-ancestors 'none';"
+
+# Sécurité de base
+Header set X-Content-Type-Options "nosniff"
+Header set X-Frame-Options "DENY"
+Header set Referrer-Policy "strict-origin-when-cross-origin"
+
+# Cache des assets statiques
+<FilesMatch "\.(css|js|png|jpg|jpeg|gif|svg|ico|woff|woff2)$">
+  Header set Cache-Control "public, max-age=2592000"
+</FilesMatch>
+
+# Pas de cache pour le HTML
+<FilesMatch "\.html$">
+  Header set Cache-Control "no-cache, must-revalidate"
+</FilesMatch>
+
+# Page 404 personnalisée (optionnel)
+# ErrorDocument 404 /index.html

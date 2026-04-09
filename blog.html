@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog — Notygo</title>
+  <meta name="description" content="Actualités, conseils et ressources pour les organisateurs de concours sportifs. Découvrez les dernières nouveautés de Notygo.">
+  <meta property="og:title" content="Blog — Notygo">
+  <meta property="og:description" content="Actualités, conseils et ressources pour les organisateurs de concours sportifs. Découvrez les dernières nouveautés de Notygo.">
+  <meta property="og:url" content="https://notygo.fr/blog.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Notygo">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:image" content="https://notygo.fr/images/Logo.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Blog — Notygo">
+  <meta name="twitter:description" content="Actualités, conseils et ressources pour les organisateurs de concours sportifs. Découvrez les dernières nouveautés de Notygo.">
+  <meta name="twitter:image" content="https://notygo.fr/images/Logo.png">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://notygo.fr/blog.html">
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+  <link rel="shortcut icon" href="/images/favicon.svg">
+  <link rel="stylesheet" href="/style.css?v=3">
+</head>
+<body>
+
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu-header">
+    <a href="/" class="nav-logo"><img src="/images/logo-white.png" alt="Notygo" width="118" height="36"></a>
+    <button class="mobile-menu-close" onclick="closeMobileMenu()">✕</button>
+  </div>
+  <nav>
+    <a href="/">Accueil</a>
+    <a href="fonctionnement.html">Comment ça marche</a>
+    <a href="fonctionnalites.html">Fonctionnalités</a>
+    <a href="tarifs.html">Tarifs</a>
+    <a href="blog.html">Blog</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <div class="mobile-menu-ctas">
+    <a href="https://notygo.app/login" style="background:rgba(255,255,255,0.1);color:white;border:1px solid rgba(255,255,255,0.3);">Se connecter</a>
+    <a href="https://notygo.app/register" style="background:#FF6422;color:white;">Créer un compte gratuit</a>
+  </div>
+</div>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-logo"><img src="/images/logo-white.png" alt="Notygo" width="118" height="36"></a>
+    <ul class="nav-links">
+      <li><a href="/">Accueil</a></li>
+      <li><a href="fonctionnement.html">Comment ça marche</a></li>
+      <li><a href="fonctionnalites.html">Fonctionnalités</a></li>
+      <li><a href="tarifs.html">Tarifs</a></li>
+      <li><a href="blog.html" class="active">Blog</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-ctas">
+      <a href="https://notygo.app/login" class="btn-nav-login">Se connecter</a>
+      <a href="https://notygo.app/register" class="btn-nav-register">Créer un compte</a>
+    </div>
+    <button class="nav-burger" onclick="openMobileMenu()">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="container">
+    <h1>Blog Notygo</h1>
+    <p>Conseils, actualités et ressources pour les organisateurs de concours sportifs.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div id="blog-grid" class="blog-grid">
+      <div id="blog-loading" style="grid-column:1/-1;text-align:center;padding:3rem;color:#64748b;">Chargement des articles...</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container">
+    <h2>Essayez Notygo gratuitement</h2>
+    <p>Rejoignez les clubs qui modernisent la gestion de leurs concours.</p>
+    <div class="hero-ctas">
+      <a href="https://notygo.app/register" class="btn-primary">Créer un compte gratuit →</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="/" class="footer-logo"><img src="/images/logo-white.png" alt="Notygo" width="105" height="32" loading="lazy"></a>
+      <p>La plateforme de gestion d'appels pour concours sportifs. Notifications push instantanées sur iOS et Android.</p>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/notygo_fr/" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+        <a href="https://www.facebook.com/notygo.fr/" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+        <a href="https://www.youtube.com/@notygo_fr" target="_blank" rel="noopener" aria-label="YouTube">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
+        </a>
+        <a href="https://www.tiktok.com/@notygo_fr" target="_blank" rel="noopener" aria-label="TikTok">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Produit</h4>
+      <ul>
+        <li><a href="fonctionnement.html">Comment ça marche</a></li>
+      <li><a href="fonctionnalites.html">Fonctionnalités</a></li>
+        <li><a href="tarifs.html">Tarifs</a></li>
+        <li><a href="https://notygo.app/register">Créer un compte</a></li>
+        <li><a href="https://notygo.app/login">Se connecter</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Ressources</h4>
+      <ul>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Sports</h4>
+      <ul>
+        <li><a href="petanque.html">Pétanque</a></li>
+        <li><a href="tennis.html">Tennis</a></li>
+        <li><a href="basket.html">Basket</a></li>
+        <li><a href="sports.html">Tous les sports</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 SASU SEVEN COMWEB. Tous droits réservés.</span>
+    <div style="display:flex; gap:1.5rem;">
+      <a href="mentions-legales.html">Mentions légales</a>
+      <a href="confidentialite.html">Confidentialité</a>
+      <a href="cgu.html">CGU</a>
+      <a href="cgv.html">CGV</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function openMobileMenu() { document.getElementById('mobileMenu').classList.add('open'); }
+  function closeMobileMenu() { document.getElementById('mobileMenu').classList.remove('open'); }
+
+  const GRADIENTS = [
+    'linear-gradient(135deg,#0A1F44,#0d2a5e)',
+    'linear-gradient(135deg,#0d2a5e,#1a3a6e)',
+    'linear-gradient(135deg,#FE5536,#0A1F44)',
+    'linear-gradient(135deg,#0A1F44,#FE5536)',
+    'linear-gradient(135deg,#060d1a,#0A1F44)',
+    'linear-gradient(135deg,#1a3a6e,#0A1F44)',
+  ];
+  const EMOJIS = ['📝','🔔','🎯','🏆','📺','🎤','⚽','🎾','🏀','🎱'];
+
+  async function loadBlog() {
+    try {
+      const res = await fetch('https://www.notygo.app/api/blog');
+      const posts = await res.json();
+      const grid = document.getElementById('blog-grid');
+      if (!Array.isArray(posts) || posts.length === 0) {
+        grid.innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:3rem;color:#64748b;">Aucun article pour le moment. Revenez bientôt !</div>';
+        return;
+      }
+      grid.innerHTML = posts.map((post, i) => {
+        const tag = (post.tags && post.tags[0]) ? post.tags[0] : 'Blog';
+        const date = post.published_at ? new Date(post.published_at).toLocaleDateString('fr-FR', {month:'long',year:'numeric'}) : '';
+        const img = post.og_image_url
+          ? `<img src="${post.og_image_url}" alt="${post.title}" style="width:100%;height:100%;object-fit:cover;">`
+          : `${EMOJIS[i % EMOJIS.length]}`;
+        const bg = post.og_image_url ? '' : `style="background:${GRADIENTS[i % GRADIENTS.length]}"`;
+        return `
+          <a href="article.html?slug=${post.slug}" class="blog-card">
+            <div class="blog-card-img" ${bg}>${img}</div>
+            <div class="blog-card-body">
+              <div class="blog-card-tag">${tag}</div>
+              <h3>${post.title}</h3>
+              <p>${post.excerpt || ''}</p>
+              <div class="blog-card-date">${date}</div>
+            </div>
+          </a>`;
+      }).join('');
+    } catch (e) {
+      document.getElementById('blog-grid').innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:3rem;color:#64748b;">Impossible de charger les articles.</div>';
+    }
+  }
+
+  loadBlog();
+</script>
+
+<!-- BANDEAU COOKIE RGPD -->
+<div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#0A1F44;color:white;padding:1rem 2rem;z-index:9999;box-shadow:0 -4px 20px rgba(0,0,0,0.3);">
+  <div style="max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;">
+    <p style="margin:0;font-size:0.875rem;color:rgba(255,255,255,0.85);flex:1;min-width:260px;">
+      🍪 Ce site utilise uniquement des cookies techniques nécessaires à son fonctionnement. Aucun cookie publicitaire ou de traçage.
+      <a href="confidentialite.html" style="color:#FE5536;text-decoration:underline;margin-left:4px;">En savoir plus</a>
+    </p>
+    <div style="display:flex;gap:0.75rem;flex-shrink:0;">
+      <button onclick="acceptCookies()" style="background:#FE5536;color:white;border:none;padding:9px 20px;border-radius:6px;font-weight:700;font-size:0.875rem;cursor:pointer;">J'accepte</button>
+      <button onclick="refuseCookies()" style="background:transparent;color:rgba(255,255,255,0.7);border:1px solid rgba(255,255,255,0.3);padding:9px 20px;border-radius:6px;font-size:0.875rem;cursor:pointer;">Refuser</button>
+    </div>
+  </div>
+</div>
+<script>
+  (function(){ if(!localStorage.getItem("cookie_consent")){ document.getElementById("cookie-banner").style.display="block"; } })();
+  function acceptCookies(){ localStorage.setItem("cookie_consent","accepted"); document.getElementById("cookie-banner").style.display="none"; }
+  function refuseCookies(){ localStorage.setItem("cookie_consent","refused"); document.getElementById("cookie-banner").style.display="none"; }
+</script>
+</body>
+</html>
