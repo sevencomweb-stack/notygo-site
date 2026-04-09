@@ -50,4 +50,13 @@
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
+
+  <!-- BLOG ARTICLES -->
+  <url>
+    <loc>https://notygo.fr/blog/notifier-les-petanqueurs-sur-mobile.html</loc>
+    <lastmod>2026-04-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- END BLOG ARTICLES -->
 </urlset>

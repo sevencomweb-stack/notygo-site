@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notifier les pétanqueurs sur mobile — Notygo</title>
+  <meta name="description" content="Organisez vos concours de pétanque sans sono. Intégration Gestion concours, notifications push sur mobile, écran TV temps réel et plan des terrains inclus.">
+  <meta property="og:title" content="Notifier les pétanqueurs sur mobile">
+  <meta property="og:description" content="Organisez vos concours de pétanque sans sono. Intégration Gestion concours, notifications push sur mobile, écran TV temps réel et plan des terrains inclus.">
+  <meta property="og:url" content="https://notygo.fr/blog/notifier-les-petanqueurs-sur-mobile.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Notygo">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:image" content="https://mhcluoexzurnximgxbgt.supabase.co/storage/v1/object/public/blog-images/articles/1775738691481-tny7qf80kbg.jpeg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Notifier les pétanqueurs sur mobile — Notygo">
+  <meta name="twitter:description" content="Organisez vos concours de pétanque sans sono. Intégration Gestion concours, notifications push sur mobile, écran TV temps réel et plan des terrains inclus.">
+  <meta name="twitter:image" content="https://mhcluoexzurnximgxbgt.supabase.co/storage/v1/object/public/blog-images/articles/1775738691481-tny7qf80kbg.jpeg">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://notygo.fr/blog/notifier-les-petanqueurs-sur-mobile.html">
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+  <link rel="shortcut icon" href="/images/favicon.svg">
+  <link rel="stylesheet" href="/style.css?v=3">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Notifier les pétanqueurs sur mobile","description":"Organisez vos concours de pétanque sans sono. Intégration Gestion concours, notifications push sur mobile, écran TV temps réel et plan des terrains inclus.","image":"https://mhcluoexzurnximgxbgt.supabase.co/storage/v1/object/public/blog-images/articles/1775738691481-tny7qf80kbg.jpeg","datePublished":"2026-04-09T12:44:55.735+00:00","dateModified":"2026-04-09T13:09:42.303+00:00","author":{"@type":"Organization","name":"Notygo","url":"https://notygo.fr"},"publisher":{"@type":"Organization","name":"Notygo","logo":{"@type":"ImageObject","url":"https://notygo.fr/images/Logo.png"}},"url":"https://notygo.fr/blog/notifier-les-petanqueurs-sur-mobile.html","mainEntityOfPage":{"@type":"WebPage","@id":"https://notygo.fr/blog/notifier-les-petanqueurs-sur-mobile.html"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://notygo.fr/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://notygo.fr/blog.html"},{"@type":"ListItem","position":3,"name":"Notifier les pétanqueurs sur mobile","item":"https://notygo.fr/blog/notifier-les-petanqueurs-sur-mobile.html"}]}</script>
+  <style>
+    .article-body { max-width: 760px; margin: 0 auto; }
+    .article-body h2 { font-size: 1.5rem; font-weight: 800; color: var(--navy); margin: 2rem 0 0.75rem; }
+    .article-body h3 { font-size: 1.15rem; font-weight: 700; color: var(--navy); margin: 1.5rem 0 0.5rem; }
+    .article-body p { color: #334155; line-height: 1.8; margin-bottom: 1rem; }
+    .article-body ul, .article-body ol { padding-left: 1.5rem; margin-bottom: 1rem; }
+    .article-body li { color: #334155; line-height: 1.8; margin-bottom: 0.25rem; }
+    .article-body a { color: var(--navy); text-decoration: underline; }
+    .article-body strong { font-weight: 700; color: var(--navy); }
+    .article-body em { font-style: italic; }
+    .article-body blockquote { border-left: 4px solid var(--gold); padding-left: 1rem; color: var(--text-muted); font-style: italic; margin: 1.5rem 0; }
+  </style>
+</head>
+<body>
+
+
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu-header">
+    <a href="/" class="nav-logo"><img src="/images/logo-white.png" alt="Notygo" width="118" height="36"></a>
+    <button class="mobile-menu-close" onclick="closeMobileMenu()">✕</button>
+  </div>
+  <nav>
+    <a href="/">Accueil</a>
+    <a href="/fonctionnement.html">Comment ça marche</a>
+    <a href="/fonctionnalites.html">Fonctionnalités</a>
+    <a href="/tarifs.html">Tarifs</a>
+    <a href="/blog.html">Blog</a>
+    <a href="/contact.html">Contact</a>
+  </nav>
+  <div class="mobile-menu-ctas">
+    <a href="https://notygo.app/login" style="background:rgba(255,255,255,0.1);color:white;border:1px solid rgba(255,255,255,0.3);">Se connecter</a>
+    <a href="https://notygo.app/register" style="background:#FF6422;color:white;">Créer un compte gratuit</a>
+  </div>
+</div>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-logo"><img src="/images/logo-white.png" alt="Notygo" width="118" height="36"></a>
+    <ul class="nav-links">
+      <li><a href="/">Accueil</a></li>
+      <li><a href="/fonctionnement.html">Comment ça marche</a></li>
+      <li><a href="/fonctionnalites.html">Fonctionnalités</a></li>
+      <li><a href="/tarifs.html">Tarifs</a></li>
+      <li><a href="/blog.html" class="active">Blog</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-ctas">
+      <a href="https://notygo.app/login" class="btn-nav-login">Se connecter</a>
+      <a href="https://notygo.app/register" class="btn-nav-register">Créer un compte</a>
+    </div>
+    <button class="nav-burger" onclick="openMobileMenu()">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<section style="background:var(--surface); padding-bottom:0;">
+  <div class="container" style="max-width:800px;">
+    <div style="display:flex;gap:0.5rem;align-items:center;font-size:0.85rem;color:var(--text-muted);margin-bottom:1.5rem;">
+      <a href="/blog.html" style="color:var(--accent);text-decoration:none;font-weight:600;">Blog</a>
+      <span>›</span><span>Notifier les pétanqueurs sur mobile</span>
+    </div>
+    <div style="display:flex;gap:0.5rem;flex-wrap:wrap;margin-bottom:1rem;"><span style="font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#FF6422;background:rgba(255,100,34,0.1);padding:4px 12px;border-radius:999px;">Pétanque</span></div>
+    <h1 style="font-family:var(--font-display);font-size:clamp(1.8rem,5vw,2.6rem);font-weight:900;color:var(--navy);line-height:1.1;margin-bottom:1rem;letter-spacing:-1px;">Notifier les pétanqueurs sur mobile</h1>
+    <div style="font-size:0.82rem;color:var(--text-muted);margin-bottom:2rem;">9 avril 2026 · 3 min de lecture</div>
+  </div>
+</section>
+
+<section style="padding-top:2rem;">
+  <div class="container">
+    <div class="article-body">
+      <img src="https://mhcluoexzurnximgxbgt.supabase.co/storage/v1/object/public/blog-images/articles/1775738691481-tny7qf80kbg.jpeg" alt="Notifier les pétanqueurs sur mobile" style="width:100%;height:320px;object-fit:cover;border-radius:16px;margin-bottom:2rem;" loading="eager">
+      <p>Organiser un concours de pétanque, c'est gérer des dizaines voire des centaines d'équipes, coordonner les terrains et s'assurer que tout le monde répond à l'appel au bon moment. Notygo a été conçu pour répondre précisément à ces défis.</p><h2><strong>L'intégration Geslico : appels entièrement automatiques</strong></h2><p>La pétanque est le sport principal pour lequel Notygo a été développé. Si votre concours est géré via&nbsp;<strong>Gestion Concours (FFPJP)</strong>, Notygo peut scanner automatiquement la page de résultats publiée en ligne et envoyer les notifications dès qu'une nouvelle partie apparaît — sans aucune intervention manuelle de l'organisateur.</p><ul><li><p>Notygo surveille la page Gestion concours toutes les quelques secondes</p></li><li><p>Dès qu'une partie est publiée, les équipes concernées sont notifiées instantanément</p></li><li><p>L'organisateur peut continuer à gérer le concours sans toucher à son téléphone</p></li></ul><blockquote><p><em>Nous vous accompagnons dans la configuration de l'intégration Gestion concours lors de l'activation de votre compte.</em></p></blockquote><h2><strong>Notifications push sans application à télécharger</strong></h2><p>Vos joueurs n'ont&nbsp;<strong>pas besoin de télécharger une application</strong>&nbsp;sur l'App Store ou Google Play. Ils scannent simplement le QR code affiché à l'entrée du concours, choisissent leur numéro d'équipe, et s'abonnent aux notifications en moins de 30 secondes.</p><p>Sur&nbsp;<strong>Android</strong>, Chrome propose d'installer Notygo directement depuis la bannière d'installation. Sur&nbsp;<strong>iPhone</strong>&nbsp;(iOS 16.4+), il suffit d'ajouter la page à l'écran d'accueil depuis Safari pour activer les notifications push.</p><h2><strong>Notifications programmées pour les marathons</strong></h2><p>Pour les&nbsp;<strong>marathons de pétanque</strong>&nbsp;— concours qui se déroulent sur une journée entière avec des rondes planifiées à l'avance — Notygo permet de programmer vos notifications à des horaires précis. Configurez le matin le planning de la journée et les joueurs reçoivent automatiquement leur notification au bon moment, sans intervention manuelle entre chaque ronde.</p><ul><li><p>Planifiez vos rondes à l'avance avec l'heure de début prévue</p></li><li><p>Les équipes reçoivent leur notification à l'heure programmée</p></li><li><p>L'organisateur est libéré pour gérer les imprévus sur le terrain</p></li></ul><h2><strong>Plan des terrains : fini les joueurs perdus</strong></h2><p>Sur un grand site avec des dizaines de terrains numérotés, les joueurs — surtout les visiteurs — peuvent facilement se perdre. Notygo permet d'uploader le&nbsp;<strong>plan des terrains</strong>&nbsp;directement dans l'application. Les joueurs y accèdent depuis leur téléphone en un tap pour localiser précisément leur terrain avant même que la notification arrive.</p><blockquote><p><em>Fini les joueurs qui errent d'un bout à l'autre du boulodrome en cherchant le terrain 47.</em></p></blockquote><h2><strong>Écran TV au boulodrome ou à la buvette</strong></h2><p>Connectez un écran TV dans votre salle couverte, à l'entrée du boulodrome ou directement à la buvette. Notygo affiche en temps réel toutes les parties en cours, les terrains occupés et les prochains appels. Le tableau se met à jour instantanément à chaque appel, sans recharger la page. Les joueurs peuvent suivre le déroulé du concours en prenant leur café.</p><h2><strong>Dictée vocale pour appeler sans les mains</strong></h2><p>L'organisateur peut appeler une partie simplement en parlant dans son microphone (micro de téléphone par exemple) :&nbsp;<em>"Équipe 42 contre équipe 57, terrain 3"</em>. Notygo analyse la phrase et envoie la notification automatiquement. Pratique pour gérer un concours en mouvement.</p><h2><strong>Mode solo pour les concours individuels</strong></h2><p>Certains concours de pétanque organisent des épreuves individuelles (tir de précision). Le mode solo de Notygo permet d'appeler un joueur par son nom sur une zone spécifique, avec notification personnalisée.</p><h2><strong>Gestion des scores entre équipes</strong></h2><p>À la fin de chaque mène, une équipe saisit le score depuis son téléphone. L'équipe adverse reçoit une notification pour valider ou contester. Les scores sont centralisés dans le tableau de bord de l'organisateur en temps réel.</p><p></p><div style="background:#F0FDF4;border:1px solid #BBF7D0;border-radius:12px;padding:1.25rem 1.5rem;margin:2rem 0;">
+<p style="font-weight:800;color:#166534;margin-bottom:0.5rem;">✅ En résumé : pourquoi Notygo pour la pétanque ?</p>
+<div style="color:#166534;"><ul><li>Intégration Gestion concours pour des appels 100% automatiques</li><li>Notifications programmées pour les marathons</li><li>Plan des terrains accessible sur le téléphone des joueurs</li><li>Écran TV au boulodrome ou à la buvette</li><li>Dictée vocale et appels manuels</li><li>Notifications push sur iOS et Android, sans app à télécharger</li></ul></div></div><p></p>
+
+      <div style="margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid #e2e8f0;">
+        <p style="font-size:0.8rem;font-weight:700;color:#64748b;text-transform:uppercase;letter-spacing:1px;margin-bottom:0.75rem;">Partager cet article</p>
+        <div style="display:flex;gap:0.6rem;flex-wrap:wrap;">
+          <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fnotygo.fr%2Fblog%2Fnotifier-les-petanqueurs-sur-mobile.html&text=Notifier%20les%20p%C3%A9tanqueurs%20sur%20mobile%20via%20@notygo_fr" target="_blank" rel="noopener noreferrer"
+            style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:8px;font-size:0.8rem;font-weight:600;text-decoration:none;background:#000;color:#fff;">𝕏 Twitter</a>
+          <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fnotygo.fr%2Fblog%2Fnotifier-les-petanqueurs-sur-mobile.html" target="_blank" rel="noopener noreferrer"
+            style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:8px;font-size:0.8rem;font-weight:600;text-decoration:none;background:#1877f2;color:#fff;">Facebook</a>
+          <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fnotygo.fr%2Fblog%2Fnotifier-les-petanqueurs-sur-mobile.html" target="_blank" rel="noopener noreferrer"
+            style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:8px;font-size:0.8rem;font-weight:600;text-decoration:none;background:#0a66c2;color:#fff;">LinkedIn</a>
+        </div>
+      </div>
+
+      <div style="margin-top:2rem;">
+        <a href="/blog.html" style="color:var(--text-muted);font-size:0.875rem;text-decoration:none;">← Retour au blog</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section" style="padding:3rem 2rem;">
+  <div class="container">
+    <h2>Essayez Notygo gratuitement</h2>
+    <p>Gérez vos concours sportifs avec des notifications push instantanées.</p>
+    <div class="hero-ctas">
+      <a href="https://notygo.app/register" class="btn-primary">Créer un compte gratuit →</a>
+    </div>
+  </div>
+</section>
+
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="/" class="footer-logo"><img src="/images/logo-white.png" alt="Notygo" width="105" height="32" loading="lazy"></a>
+      <p>La plateforme de gestion d'appels pour concours sportifs. Notifications push instantanées sur iOS et Android.</p>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/notygo_fr/" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+        <a href="https://www.facebook.com/notygo.fr/" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+        <a href="https://www.youtube.com/@notygo_fr" target="_blank" rel="noopener" aria-label="YouTube">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
+        </a>
+        <a href="https://www.tiktok.com/@notygo_fr" target="_blank" rel="noopener" aria-label="TikTok">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Produit</h4>
+      <ul>
+        <li><a href="/fonctionnement.html">Comment ça marche</a></li>
+        <li><a href="/fonctionnalites.html">Fonctionnalités</a></li>
+        <li><a href="/tarifs.html">Tarifs</a></li>
+        <li><a href="https://notygo.app/register">Créer un compte</a></li>
+        <li><a href="https://notygo.app/login">Se connecter</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Ressources</h4>
+      <ul>
+        <li><a href="/blog.html">Blog</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Sports</h4>
+      <ul>
+        <li><a href="/petanque.html">Pétanque</a></li>
+        <li><a href="/tennis.html">Tennis</a></li>
+        <li><a href="/basket.html">Basket</a></li>
+        <li><a href="/sports.html">Tous les sports</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 SASU SEVEN COMWEB. Tous droits réservés.</span>
+    <div style="display:flex; gap:1.5rem;">
+      <a href="/mentions-legales.html">Mentions légales</a>
+      <a href="/confidentialite.html">Confidentialité</a>
+      <a href="/cgu.html">CGU</a>
+      <a href="/cgv.html">CGV</a>
+    </div>
+  </div>
+</footer>
+
+<div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#0A1F44;color:white;padding:1rem 2rem;z-index:9999;box-shadow:0 -4px 20px rgba(0,0,0,0.3);">
+  <div style="max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;">
+    <p style="margin:0;font-size:0.875rem;color:rgba(255,255,255,0.85);flex:1;min-width:260px;">
+      🍪 Ce site utilise uniquement des cookies techniques nécessaires à son fonctionnement. Aucun cookie publicitaire ou de traçage.
+      <a href="/confidentialite.html" style="color:#FE5536;text-decoration:underline;margin-left:4px;">En savoir plus</a>
+    </p>
+    <div style="display:flex;gap:0.75rem;flex-shrink:0;">
+      <button onclick="acceptCookies()" style="background:#FE5536;color:white;border:none;padding:9px 20px;border-radius:6px;font-weight:700;font-size:0.875rem;cursor:pointer;">J'accepte</button>
+      <button onclick="refuseCookies()" style="background:transparent;color:rgba(255,255,255,0.7);border:1px solid rgba(255,255,255,0.3);padding:9px 20px;border-radius:6px;font-size:0.875rem;cursor:pointer;">Refuser</button>
+    </div>
+  </div>
+</div>
+<script>
+  function openMobileMenu() { document.getElementById('mobileMenu').classList.add('open'); }
+  function closeMobileMenu() { document.getElementById('mobileMenu').classList.remove('open'); }
+  (function(){ if(!localStorage.getItem("cookie_consent")){ document.getElementById("cookie-banner").style.display="block"; } })();
+  function acceptCookies(){ localStorage.setItem("cookie_consent","accepted"); document.getElementById("cookie-banner").style.display="none"; }
+  function refuseCookies(){ localStorage.setItem("cookie_consent","refused"); document.getElementById("cookie-banner").style.display="none"; }
+</script>
+</body>
+</html>
