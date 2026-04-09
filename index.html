@@ -22,7 +22,7 @@
   <link rel="shortcut icon" href="/images/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="/style.css?v=3">
+  <link rel="stylesheet" href="/style.css?v=4">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -335,22 +335,22 @@
     </div>
 
     <!-- Carte Événement — bannière horizontale -->
-    <div style="margin-top:1.5rem; position:relative; border:2px solid var(--gold); border-radius:var(--radius-xl); background:linear-gradient(135deg, rgba(255,100,34,0.06) 0%, var(--surface) 50%); padding:1.75rem 2.5rem; display:flex; align-items:center; justify-content:space-between; gap:2rem; flex-wrap:wrap;">
-      <div style="position:absolute;top:-14px;left:2rem;background:linear-gradient(90deg,var(--gold),#e5531b);color:white;font-size:0.7rem;font-weight:700;padding:5px 16px;border-radius:999px;letter-spacing:0.5px;text-transform:uppercase;">Ponctuel &amp; flexible</div>
-      <div style="display:flex;align-items:center;gap:2rem;flex-wrap:wrap;flex:1;">
+    <div class="event-banner">
+      <div class="event-banner-label">Ponctuel &amp; flexible</div>
+      <div class="event-banner-body">
         <div>
           <div style="font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--text-muted);margin-bottom:4px;">Événement</div>
           <div style="font-family:var(--font-display);font-size:2.8rem;font-weight:900;color:var(--navy);line-height:1;letter-spacing:-1px;"><sup style="font-size:1.3rem;vertical-align:super;">€</sup>30</div>
           <div style="font-size:0.85rem;color:var(--text-muted);margin-top:2px;">paiement unique · par événement</div>
         </div>
-        <ul style="list-style:none;display:flex;gap:1.25rem;flex-wrap:wrap;margin:0;">
-          <li style="display:flex;align-items:center;gap:6px;font-size:0.875rem;color:var(--text);"><span style="color:var(--gold);font-weight:800;">✓</span> 3 concours simultanés</li>
-          <li style="display:flex;align-items:center;gap:6px;font-size:0.875rem;color:var(--text);"><span style="color:var(--gold);font-weight:800;">✓</span> Toutes les fonctionnalités Club</li>
-          <li style="display:flex;align-items:center;gap:6px;font-size:0.875rem;color:var(--text);"><span style="color:var(--gold);font-weight:800;">✓</span> Valable le temps de l'événement</li>
-          <li style="display:flex;align-items:center;gap:6px;font-size:0.875rem;color:var(--text);"><span style="color:var(--gold);font-weight:800;">✓</span> Sans abonnement ni engagement</li>
+        <ul class="event-banner-features">
+          <li><span style="color:var(--gold);font-weight:800;">✓</span> 3 concours simultanés</li>
+          <li><span style="color:var(--gold);font-weight:800;">✓</span> Toutes les fonctionnalités Club</li>
+          <li><span style="color:var(--gold);font-weight:800;">✓</span> Valable le temps de l'événement</li>
+          <li><span style="color:var(--gold);font-weight:800;">✓</span> Sans abonnement ni engagement</li>
         </ul>
       </div>
-      <a href="https://notygo.app/register" style="display:inline-block;padding:13px 28px;border-radius:var(--radius-sm);font-weight:700;text-decoration:none;font-size:0.925rem;background:linear-gradient(135deg,var(--gold),#e5531b);color:white;white-space:nowrap;box-shadow:0 4px 16px rgba(255,100,34,0.3);transition:all 0.2s;flex-shrink:0;">Choisir Événement</a>
+      <a href="https://notygo.app/register" class="btn-event-banner">Choisir Événement</a>
     </div>
 
     <div style="text-align:center; margin-top: 1.25rem;">
@@ -364,7 +364,7 @@
   <div class="container">
     <p class="section-label">Retours organisateurs</p>
     <h2 class="section-title">Ce qu'en disent ceux qui l'utilisent</h2>
-    <div class="testimonials-grid" style="display:grid; grid-template-columns: repeat(3,1fr); gap:1.5rem; margin-top:2.5rem;">
+    <div class="testimonials-grid">
       <div style="background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-lg); padding:1.75rem;">
         <p style="color:var(--gold); font-size:1.5rem; line-height:1; margin-bottom:1rem;">❝</p>
         <p style="color:var(--text); font-size:0.95rem; line-height:1.7; margin-bottom:1.25rem;">C'est génial, ça révolutionne vraiment nos concours. Fini les joueurs qui n'entendent pas l'appel ou qui sont trop loin.</p>
@@ -431,18 +431,11 @@
       <h4>Ressources</h4>
       <ul>
         <li><a href="blog.html">Blog</a></li>
+        <li><a href="sports.html">Tous les sports</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </div>
-    <div class="footer-col">
-      <h4>Sports</h4>
-      <ul>
-        <li><a href="petanque.html">Pétanque</a></li>
-        <li><a href="tennis.html">Tennis</a></li>
-        <li><a href="basket.html">Basket</a></li>
-        <li><a href="sports.html">Tous les sports</a></li>
-      </ul>
-    </div>
+
   </div>
   <div class="footer-bottom">
     <span>© 2025 SASU SEVEN COMWEB. Tous droits réservés.</span>

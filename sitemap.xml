@@ -53,6 +53,18 @@
 
   <!-- BLOG ARTICLES -->
   <url>
+    <loc>https://notygo.fr/blog/basket-fluidifier-son-tournoi.html</loc>
+    <lastmod>2026-04-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://notygo.fr/blog/tennis-les-notifications-push.html</loc>
+    <lastmod>2026-04-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://notygo.fr/blog/notifier-les-petanqueurs-sur-mobile.html</loc>
     <lastmod>2026-04-09</lastmod>
     <changefreq>monthly</changefreq>

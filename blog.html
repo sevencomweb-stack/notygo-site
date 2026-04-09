@@ -20,7 +20,7 @@
   <link rel="canonical" href="https://notygo.fr/blog.html">
   <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
   <link rel="shortcut icon" href="/images/favicon.svg">
-  <link rel="stylesheet" href="/style.css?v=3">
+  <link rel="stylesheet" href="/style.css?v=4">
 </head>
 <body>
 
@@ -75,6 +75,24 @@
   <div class="container">
     <!-- STATIC BLOG INDEX — généré automatiquement par generate-blog.mjs -->
 <div id="blog-grid" class="blog-grid">
+<a href="/blog/basket-fluidifier-son-tournoi.html" class="blog-card" style="text-decoration:none;display:block;background:white;border:1px solid #e2e8f0;border-radius:12px;overflow:hidden;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='0 8px 24px rgba(0,0,0,0.1)'" onmouseout="this.style.boxShadow='none'">
+  <img src="https://mhcluoexzurnximgxbgt.supabase.co/storage/v1/object/public/blog-images/articles/1775745406625-koighf9keq.jpg" alt="Basket - Fluidifier son tournoi" style="width:100%;height:180px;object-fit:cover;border-radius:12px 12px 0 0;" loading="lazy">
+  <div style="padding:1.25rem;">
+    <div style="margin-bottom:0.75rem;display:flex;gap:0.4rem;flex-wrap:wrap;"><span style="font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#FF6422;background:rgba(255,100,34,0.08);padding:3px 8px;border-radius:999px;">Basket</span></div>
+    <h3 style="font-weight:800;font-size:1rem;color:#0A1F44;margin-bottom:0.5rem;line-height:1.4;">Basket - Fluidifier son tournoi</h3>
+    <p style="font-size:0.82rem;color:#64748b;line-height:1.5;margin-bottom:0.75rem;">Gérez vos tournois de basket 3x3, 5x5 ou en salle sans stress logistique. Vos équipes sont notifiées sur leur terrain au bon moment.</p>
+    <span style="font-size:0.75rem;color:#94a3b8;">9 avril 2026</span>
+  </div>
+</a>
+<a href="/blog/tennis-les-notifications-push.html" class="blog-card" style="text-decoration:none;display:block;background:white;border:1px solid #e2e8f0;border-radius:12px;overflow:hidden;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='0 8px 24px rgba(0,0,0,0.1)'" onmouseout="this.style.boxShadow='none'">
+  <img src="https://mhcluoexzurnximgxbgt.supabase.co/storage/v1/object/public/blog-images/articles/1775745197823-m6rvle4nmnl.jpg" alt="Tennis - Les notifications push" style="width:100%;height:180px;object-fit:cover;border-radius:12px 12px 0 0;" loading="lazy">
+  <div style="padding:1.25rem;">
+    <div style="margin-bottom:0.75rem;display:flex;gap:0.4rem;flex-wrap:wrap;"><span style="font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#FF6422;background:rgba(255,100,34,0.08);padding:3px 8px;border-radius:999px;">Tennis</span></div>
+    <h3 style="font-weight:800;font-size:1rem;color:#0A1F44;margin-bottom:0.5rem;line-height:1.4;">Tennis - Les notifications push</h3>
+    <p style="font-size:0.82rem;color:#64748b;line-height:1.5;margin-bottom:0.75rem;">Gérez vos tournois de tennis de façon moderne et rapide. Appelez les joueurs sur leur court directement sur leur téléphone.</p>
+    <span style="font-size:0.75rem;color:#94a3b8;">9 avril 2026</span>
+  </div>
+</a>
 <a href="/blog/notifier-les-petanqueurs-sur-mobile.html" class="blog-card" style="text-decoration:none;display:block;background:white;border:1px solid #e2e8f0;border-radius:12px;overflow:hidden;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='0 8px 24px rgba(0,0,0,0.1)'" onmouseout="this.style.boxShadow='none'">
   <img src="https://mhcluoexzurnximgxbgt.supabase.co/storage/v1/object/public/blog-images/articles/1775738691481-tny7qf80kbg.jpeg" alt="Notifier les pétanqueurs sur mobile" style="width:100%;height:180px;object-fit:cover;border-radius:12px 12px 0 0;" loading="lazy">
   <div style="padding:1.25rem;">
@@ -133,18 +151,11 @@
       <h4>Ressources</h4>
       <ul>
         <li><a href="blog.html">Blog</a></li>
+        <li><a href="sports.html">Tous les sports</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </div>
-    <div class="footer-col">
-      <h4>Sports</h4>
-      <ul>
-        <li><a href="petanque.html">Pétanque</a></li>
-        <li><a href="tennis.html">Tennis</a></li>
-        <li><a href="basket.html">Basket</a></li>
-        <li><a href="sports.html">Tous les sports</a></li>
-      </ul>
-    </div>
+
   </div>
   <div class="footer-bottom">
     <span>© 2025 SASU SEVEN COMWEB. Tous droits réservés.</span>
@@ -188,7 +199,7 @@
           : `${EMOJIS[i % EMOJIS.length]}`;
         const bg = post.og_image_url ? '' : `style="background:${GRADIENTS[i % GRADIENTS.length]}"`;
         return `
-          <a href="article.html?slug=${post.slug}" class="blog-card">
+          <a href="/blog/${post.slug}.html" class="blog-card">
             <div class="blog-card-img" ${bg}>${img}</div>
             <div class="blog-card-body">
               <div class="blog-card-tag">${tag}</div>

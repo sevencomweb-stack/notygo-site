@@ -844,9 +844,16 @@ footer::before {
   max-width: 1200px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
+  grid-template-columns: 2fr 1fr 1fr;
   gap: 3rem;
   margin-bottom: 3rem;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 2.5rem;
 }
 
 .footer-brand p {
@@ -1068,6 +1075,72 @@ footer::before {
 }
 
 /* ─────────────────────────────────────────
+   EVENT BANNER
+───────────────────────────────────────── */
+.event-banner {
+  margin-top: 1.5rem;
+  position: relative;
+  border: 2px solid var(--gold);
+  border-radius: var(--radius-xl);
+  background: linear-gradient(135deg, rgba(255,100,34,0.06) 0%, var(--surface) 50%);
+  padding: 1.75rem 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.event-banner-label {
+  position: absolute;
+  top: -14px;
+  left: 2rem;
+  background: linear-gradient(90deg, var(--gold), #e5531b);
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 5px 16px;
+  border-radius: 999px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+.event-banner-body {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  flex: 1;
+}
+.event-banner-features {
+  list-style: none;
+  display: flex;
+  gap: 0.5rem 1.25rem;
+  flex-wrap: wrap;
+  margin: 0;
+}
+.event-banner-features li {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.875rem;
+  color: var(--text);
+}
+.btn-event-banner {
+  display: inline-block;
+  padding: 13px 28px;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 0.925rem;
+  background: linear-gradient(135deg, var(--gold), #e5531b);
+  color: white;
+  white-space: nowrap;
+  box-shadow: 0 4px 16px rgba(255,100,34,0.3);
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+.btn-event-banner:hover { opacity: 0.9; transform: translateY(-1px); }
+
+/* ─────────────────────────────────────────
    TARIFS PAGE — full table
 ───────────────────────────────────────── */
 .pricing-table-wrap { overflow-x: auto; }
@@ -1126,7 +1199,10 @@ table.pricing-table .cross { color: var(--border-2); }
   .features-grid { grid-template-columns: 1fr; }
   .pricing-grid { grid-template-columns: 1fr; }
   .steps { grid-template-columns: 1fr 1fr; }
-  .testimonials-grid { grid-template-columns: 1fr !important; }
+  .testimonials-grid { grid-template-columns: 1fr; }
+  .event-banner { padding: 1.5rem 1.25rem; }
+  .event-banner-features { flex-direction: column; gap: 0.4rem; }
+  .btn-event-banner { width: 100%; text-align: center; }
 }
 
 @media (max-width: 480px) {
@@ -1140,6 +1216,7 @@ table.pricing-table .cross { color: var(--border-2); }
   .steps { grid-template-columns: 1fr; }
   .hero h1 { font-size: clamp(2.2rem, 9vw, 3rem); }
   .sports-section { clip-path: none; margin: 0; padding: 4rem 1.25rem; }
+  .event-banner-body { flex-direction: column; gap: 1rem; }
 }
 
 /* ─────────────────────────────────────────
