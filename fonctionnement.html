@@ -154,41 +154,9 @@
       font-style: italic;
     }
 
-    /* ── PWA steps (joueur) ── */
-    .pwa-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.5rem;
-      margin-top: 1rem;
-    }
-    .pwa-card {
-      background: var(--surface-2);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 1.25rem 1.5rem;
-    }
-    .pwa-card h4 {
-      font-weight: 700;
-      color: var(--navy);
-      margin-bottom: 0.6rem;
-      font-size: 0.95rem;
-    }
-    .pwa-card ol {
-      padding-left: 1.25rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.4rem;
-    }
-    .pwa-card ol li {
-      font-size: 0.875rem;
-      color: var(--text-muted);
-      line-height: 1.6;
-    }
-
     @media (max-width: 768px) {
       .how-step { grid-template-columns: 1fr; gap: 2rem; }
       .how-step.reverse { direction: ltr; }
-      .pwa-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -335,44 +303,63 @@
         <div class="how-step reveal">
           <div class="how-step-text">
             <div class="how-step-number">1</div>
-            <h3>Scannez le QR code à l'entrée</h3>
-            <p>À votre arrivée au concours, scannez le QR code affiché à l'accueil avec l'appareil photo de votre téléphone. Pas besoin de télécharger une application — la page s'ouvre directement dans votre navigateur.</p>
+            <h3>Ajoutez le raccourci avant le concours</h3>
+            <p>Avant le jour J, ajoutez le raccourci Notygo à votre écran d'accueil depuis le QR code de votre club ou le lien reçu par message. Aucun téléchargement, aucun compte — cela prend moins de 30 secondes depuis votre navigateur.</p>
             <ul>
-              <li>Compatible tous les téléphones (iOS et Android)</li>
-              <li>Aucun téléchargement, aucun compte à créer</li>
-              <li>La page s'ouvre en 2 secondes</li>
+              <li>Compatible iPhone (Safari) et Android (Chrome)</li>
+              <li>Raccourci ajouté directement depuis votre navigateur</li>
+              <li>Activez les notifications lors de la première ouverture</li>
             </ul>
+            <a href="https://notygo.app/install" class="btn-primary" style="display:inline-block;margin-top:1.25rem;">Ajouter le raccourci →</a>
           </div>
           <div class="how-step-img">
-            <img src="/images/screenshot-qr.png" alt="Scan QR code joueur" onerror="this.style.display='none'">
-            📷
-            <span class="img-label">Scan du QR code</span>
+            <img src="/images/screenshot-install.png" alt="Installation app Notygo" onerror="this.style.display='none'">
+            📲
+            <span class="img-label">Installation en quelques secondes</span>
           </div>
         </div>
 
         <div class="how-step reverse reveal reveal-delay-1">
           <div class="how-step-text">
             <div class="how-step-number">2</div>
-            <h3>Choisissez votre équipe</h3>
-            <p>Sur la page du concours, tapez votre numéro d'équipe (ou votre nom en mode solo). Notygo vous abonne aux notifications de cette équipe uniquement — vous ne recevrez que les appels qui vous concernent.</p>
+            <h3>Scannez le QR code à l'entrée</h3>
+            <p>Le jour du concours, scannez le QR code affiché à l'accueil avec l'appareil photo de votre téléphone (ou depuis l'app). La page du concours s'ouvre directement.</p>
             <ul>
-              <li>Mode équipe : entrez votre numéro d'équipe</li>
-              <li>Mode solo : entrez votre nom ou numéro de dossard</li>
-              <li>Un seul joueur par équipe suffit pour abonner toute l'équipe</li>
+              <li>Compatible tous les téléphones (iOS et Android)</li>
+              <li>Aucun compte à créer</li>
+              <li>La page s'ouvre en quelques secondes</li>
             </ul>
           </div>
           <div class="how-step-img">
-            <img src="/images/screenshot-inscription.png" alt="Inscription équipe joueur" onerror="this.style.display='none'">
-            ✏️
-            <span class="img-label">Saisie du numéro d'équipe</span>
+            <img src="/images/screenshot-qr.png" alt="Scan QR code joueur" onerror="this.style.display='none'">
+            📷
+            <span class="img-label">Scan du QR code du club</span>
           </div>
         </div>
 
         <div class="how-step reveal reveal-delay-1">
           <div class="how-step-text">
             <div class="how-step-number">3</div>
-            <h3>Recevez votre notification</h3>
-            <p>Dès que l'organisateur appelle votre partie, vous recevez une notification push directement sur votre téléphone — même si l'écran est verrouillé ou que vous êtes en train d'utiliser une autre application.</p>
+            <h3>Choisissez et confirmez votre équipe</h3>
+            <p>Sur la page du concours, sélectionnez votre numéro d'équipe dans la liste, vérifiez et confirmez. Notygo vous abonne aux notifications de cette équipe uniquement — vous ne recevrez que les appels qui vous concernent.</p>
+            <ul>
+              <li>Mode équipe : sélectionnez votre numéro d'équipe</li>
+              <li>Mode solo : entrez votre nom ou numéro de dossard</li>
+              <li>Un seul joueur par équipe suffit pour toute l'équipe</li>
+            </ul>
+          </div>
+          <div class="how-step-img">
+            <img src="/images/screenshot-inscription.png" alt="Inscription équipe joueur" onerror="this.style.display='none'">
+            ✏️
+            <span class="img-label">Sélection du numéro d'équipe</span>
+          </div>
+        </div>
+
+        <div class="how-step reverse reveal reveal-delay-1">
+          <div class="how-step-text">
+            <div class="how-step-number">4</div>
+            <h3>Recevez vos notifications</h3>
+            <p>Dès que l'organisateur appelle votre partie, vous recevez une notification push directement sur votre téléphone — même si l'écran est verrouillé ou que vous utilisez une autre application. Restez libre de circuler dans la salle.</p>
             <ul>
               <li>Notification avec le terrain assigné et l'adversaire</li>
               <li>Reçue même écran verrouillé</li>
@@ -383,39 +370,6 @@
             <img src="/images/screenshot-notif.png" alt="Notification push reçue sur téléphone" onerror="this.style.display='none'">
             🔔
             <span class="img-label">Notification sur l'écran de verrouillage</span>
-          </div>
-        </div>
-
-        <!-- PWA explication -->
-        <div class="how-step reverse reveal reveal-delay-1">
-          <div class="how-step-text">
-            <div class="how-step-number">4</div>
-            <h3>Ajoutez Notygo à votre écran d'accueil</h3>
-            <p>Pour activer les notifications push (surtout sur iPhone), ajoutez Notygo à votre écran d'accueil comme une vraie application. C'est gratuit, instantané, et ne prend pas de place — aucun téléchargement sur l'App Store.</p>
-            <div class="pwa-grid" style="margin-top:1.25rem;">
-              <div class="pwa-card">
-                <h4>🤖 Android (Chrome)</h4>
-                <ol>
-                  <li>Scannez le QR code du concours</li>
-                  <li>Chrome affiche une bannière en bas : <strong>« Installer »</strong></li>
-                  <li>Appuyez sur Installer → c'est fait</li>
-                </ol>
-              </div>
-              <div class="pwa-card">
-                <h4>🍎 iPhone / iPad (Safari)</h4>
-                <ol>
-                  <li>Ouvrez le lien dans <strong>Safari</strong></li>
-                  <li>Appuyez sur ⬆️ Partager en bas de l'écran</li>
-                  <li>Sélectionnez <strong>« Sur l'écran d'accueil »</strong></li>
-                  <li>Confirmez → Notygo est installé</li>
-                </ol>
-              </div>
-            </div>
-          </div>
-          <div class="how-step-img">
-            <img src="/images/screenshot-install.png" alt="Installation PWA Notygo sur iPhone et Android" onerror="this.style.display='none'">
-            📲
-            <span class="img-label">Ajout à l'écran d'accueil</span>
           </div>
         </div>
 
