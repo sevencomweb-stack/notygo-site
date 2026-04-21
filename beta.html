@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Programme bêta — 5 clubs fondateurs Notygo</title>
+  <meta name="description" content="Rejoignez les 5 premiers clubs à tester Notygo en conditions réelles. Plan Club offert, accompagnement direct et influence sur le produit.">
+  <meta property="og:title" content="Programme bêta — 5 clubs fondateurs Notygo">
+  <meta property="og:description" content="Soyez parmi les 5 clubs fondateurs Notygo. Plan Club offert 3 mois, support direct, influence sur le roadmap.">
+  <meta property="og:url" content="https://notygo.fr/beta.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Notygo">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:image" content="https://notygo.fr/images/Logo.png">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://notygo.fr/beta.html">
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+  <link rel="shortcut icon" href="/images/favicon.svg">
+  <link rel="stylesheet" href="/style.css?v=4">
+  <style>
+    /* ── Page bêta — styles spécifiques ── */
+    .beta-hero {
+      background:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E"),
+        radial-gradient(ellipse 70% 60% at 80% 30%, rgba(255,100,34,0.15) 0%, transparent 70%),
+        radial-gradient(ellipse 80% 60% at 20% 70%, rgba(13,42,94,0.9) 0%, transparent 70%),
+        linear-gradient(145deg, var(--navy-light) 0%, var(--navy) 55%, #0d1f42 100%);
+      color: white;
+      padding: 6rem 2rem 5rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .beta-hero::after {
+      content: '';
+      position: absolute;
+      bottom: -2px; left: 0; right: 0;
+      height: 70px;
+      background: var(--bg);
+      clip-path: polygon(0 100%, 100% 100%, 100% 40%, 0 100%);
+    }
+    .beta-hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.4rem, 6vw, 4.6rem);
+      font-weight: 900;
+      line-height: 1.05;
+      max-width: 780px;
+      margin: 0 auto 1.5rem;
+      letter-spacing: -1px;
+      text-transform: uppercase;
+    }
+    .beta-hero h1 span { color: var(--gold); }
+    .beta-hero p {
+      font-size: clamp(1rem, 2vw, 1.15rem);
+      color: rgba(255,255,255,0.72);
+      max-width: 540px;
+      margin: 0 auto 2.5rem;
+      font-weight: 300;
+    }
+
+    /* Compteur de places */
+    .spots-counter {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255,100,34,0.12);
+      border: 1px solid rgba(255,100,34,0.35);
+      color: #ff8c5a;
+      padding: 8px 20px;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 2rem;
+    }
+    .spots-dot {
+      width: 8px; height: 8px;
+      background: var(--gold);
+      border-radius: 50%;
+      animation: pulse-dot 2s infinite;
+      flex-shrink: 0;
+    }
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50%       { opacity: 0.5; transform: scale(0.7); }
+    }
+
+    /* Avantages */
+    .benefit-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.25rem;
+      margin-top: 2.5rem;
+    }
+    .benefit-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem 1.5rem;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .benefit-card:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-3px);
+    }
+    .benefit-icon {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      display: block;
+    }
+    .benefit-card h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 0.5rem;
+    }
+    .benefit-card p {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+    .benefit-value {
+      display: inline-block;
+      margin-top: 0.75rem;
+      background: rgba(255,100,34,0.08);
+      color: var(--gold);
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 999px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* Ce qu'on demande */
+    .ask-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      max-width: 680px;
+      margin: 2rem auto 0;
+    }
+    .ask-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.1rem 1.4rem;
+    }
+    .ask-list li .ask-icon {
+      font-size: 1.4rem;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .ask-list li strong {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 2px;
+    }
+    .ask-list li span {
+      font-size: 0.83rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+
+    /* Formulaire */
+    .beta-form-wrapper {
+      max-width: 640px;
+      margin: 0 auto;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      padding: 2.75rem;
+      box-shadow: var(--shadow-lg);
+    }
+    @media (max-width: 600px) {
+      .beta-form-wrapper { padding: 1.75rem 1.25rem; }
+    }
+    .beta-form-wrapper h2 {
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: var(--navy);
+      text-transform: uppercase;
+      margin-bottom: 0.4rem;
+    }
+    .beta-form-wrapper .form-subtitle {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+    }
+    .spots-inline {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-bottom: 1.5rem;
+    }
+    .spots-inline .spots-dot { background: var(--gold); }
+
+    /* FAQ */
+    .faq-list {
+      max-width: 720px;
+      margin: 2rem auto 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+    }
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+    }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-question {
+      width: 100%;
+      background: var(--surface);
+      border: none;
+      padding: 1.2rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      cursor: pointer;
+      text-align: left;
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--navy);
+      transition: background 0.15s;
+    }
+    .faq-question:hover { background: var(--bg); }
+    .faq-chevron {
+      flex-shrink: 0;
+      width: 20px; height: 20px;
+      color: var(--text-muted);
+      transition: transform 0.2s;
+    }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+    .faq-answer-inner {
+      padding: 0 1.5rem 1.25rem;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      background: var(--bg);
+    }
+    .faq-item.open .faq-chevron { transform: rotate(180deg); }
+    .faq-item.open .faq-question { background: var(--bg); }
+    .faq-item.open .faq-answer { max-height: 300px; }
+  </style>
+</head>
+<body>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu-header">
+    <a href="/" class="nav-logo"><img src="/images/logo-white.png" alt="Notygo" width="118" height="36"></a>
+    <button class="mobile-menu-close" onclick="closeMobileMenu()">✕</button>
+  </div>
+  <nav>
+    <a href="/">Accueil</a>
+    <a href="fonctionnement.html">Comment ça marche</a>
+    <a href="fonctionnalites.html">Fonctionnalités</a>
+    <a href="tarifs.html">Tarifs</a>
+    <a href="blog.html">Blog</a>
+    <a href="beta.html" class="active">Programme bêta</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <div class="mobile-menu-ctas">
+    <a href="https://notygo.app/login" style="background:rgba(255,255,255,0.1);color:white;border:1px solid rgba(255,255,255,0.3);">Se connecter</a>
+    <a href="https://notygo.app/register" style="background:#FF6422;color:white;">Créer un compte gratuit</a>
+  </div>
+</div>
+
+<!-- NAVIGATION -->
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-logo"><img src="/images/logo-white.png" alt="Notygo" width="118" height="36"></a>
+    <ul class="nav-links">
+      <li><a href="/">Accueil</a></li>
+      <li><a href="fonctionnement.html">Comment ça marche</a></li>
+      <li><a href="fonctionnalites.html">Fonctionnalités</a></li>
+      <li><a href="tarifs.html">Tarifs</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="beta.html" class="active">Programme bêta</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-ctas">
+      <a href="https://notygo.app/login" class="btn-nav-login">Se connecter</a>
+      <a href="https://notygo.app/register" class="btn-nav-register">Créer un compte</a>
+    </div>
+    <button class="nav-burger" onclick="openMobileMenu()">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="beta-hero">
+  <div class="spots-counter">
+    <span class="spots-dot"></span>
+    5 places au total — recrutement ouvert
+  </div>
+  <h1>Rejoignez les<br><span>5 clubs fondateurs</span></h1>
+  <p>Testez Notygo en conditions réelles avant le lancement officiel. Plan Club offert, accompagnement personnalisé et votre retour façonne le produit.</p>
+  <div class="hero-ctas">
+    <a href="#candidature" class="btn-primary">Candidater maintenant →</a>
+    <a href="#avantages" class="btn-secondary">Voir les avantages</a>
+  </div>
+</section>
+
+<!-- AVANTAGES -->
+<section id="avantages">
+  <div class="container">
+    <p class="section-label">Ce que vous obtenez</p>
+    <h2 class="section-title">Les avantages clubs fondateurs</h2>
+    <p class="section-subtitle">En échange de vos retours terrain, on vous accompagne du début jusqu'à votre premier concours, et bien au-delà.</p>
+
+    <div class="benefit-grid">
+      <div class="benefit-card reveal reveal-delay-1">
+        <span class="benefit-icon">🎁</span>
+        <h3>Plan Club offert 3 mois</h3>
+        <p>Accès complet au plan Club — 3 concours simultanés, appels automatiques, dictée vocale, gestion des scores.</p>
+        <span class="benefit-value">Valeur : 30 €</span>
+      </div>
+      <div class="benefit-card reveal reveal-delay-2">
+        <span class="benefit-icon">🤝</span>
+        <h3>Accompagnement direct</h3>
+        <p>Configuration guidée lors de votre premier concours. Ligne directe (email ou WhatsApp) pour chaque question ou problème rencontré.</p>
+        <span class="benefit-value">Support prioritaire</span>
+      </div>
+      <div class="benefit-card reveal reveal-delay-3">
+        <span class="benefit-icon">🗺️</span>
+        <h3>Influence sur le roadmap</h3>
+        <p>Vos remontées remontent directement dans les prochains développements. Les retours des clubs fondateurs sont traités en priorité.</p>
+        <span class="benefit-value">Votre voix compte</span>
+      </div>
+      <div class="benefit-card reveal reveal-delay-4">
+        <span class="benefit-icon">🏅</span>
+        <h3>Badge Club Fondateur</h3>
+        <p>Votre club sera mentionné dans la page d'accueil de Notygo à son lancement comme club fondateur de la plateforme.</p>
+        <span class="benefit-value">Visibilité</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CE QU'ON DEMANDE -->
+<section style="background: var(--surface);">
+  <div class="container">
+    <p class="section-label">Ce qu'on vous demande</p>
+    <h2 class="section-title">Un engagement simple</h2>
+    <p class="section-subtitle">Pas de contrat, pas de contrainte. Juste quelques retours pour faire évoluer le produit ensemble.</p>
+
+    <ul class="ask-list">
+      <li>
+        <span class="ask-icon">🏆</span>
+        <div>
+          <strong>Tester sur 2 ou 3 concours réels</strong>
+          <span>Utiliser Notygo lors de vos prochains tournois ou compétitions, quel que soit le format ou le sport.</span>
+        </div>
+      </li>
+      <li>
+        <span class="ask-icon">🐛</span>
+        <div>
+          <strong>Signaler les bugs et frictions</strong>
+          <span>Nous remonter tout ce qui ne fonctionne pas comme prévu — via notre formulaire de signalement ou par message direct.</span>
+        </div>
+      </li>
+      <li>
+        <span class="ask-icon">📝</span>
+        <div>
+          <strong>Répondre à un court questionnaire</strong>
+          <span>Après chaque concours, un court formulaire (5 min max) pour partager votre ressenti sur l'expérience organisateur et joueur.</span>
+        </div>
+      </li>
+      <li>
+        <span class="ask-icon">💬</span>
+        <div>
+          <strong>(Optionnel) Partager votre retour</strong>
+          <span>Si l'expérience vous a plu, un avis ou une mention sur vos réseaux serait très apprécié — mais jamais obligatoire.</span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- FORMULAIRE DE CANDIDATURE -->
+<section id="candidature">
+  <div class="container">
+    <div class="beta-form-wrapper">
+      <div class="spots-inline">
+        <span class="spots-dot"></span>
+        5 places — recrutement ouvert
+      </div>
+      <h2>Candidater</h2>
+      <p class="form-subtitle">Dites-nous qui vous êtes. On revient vers vous sous 48h pour valider votre candidature.</p>
+
+      <form class="contact-form" id="betaForm" onsubmit="handleBetaSubmit(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="prenom">Prénom *</label>
+            <input type="text" id="prenom" name="prenom" required placeholder="Jean">
+          </div>
+          <div class="form-group">
+            <label for="nom">Nom *</label>
+            <input type="text" id="nom" name="nom" required placeholder="Dupont">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email *</label>
+          <input type="email" id="email" name="email" required placeholder="jean@monclub.fr">
+        </div>
+
+        <div class="form-group">
+          <label for="club">Nom du club / organisation *</label>
+          <input type="text" id="club" name="club" required placeholder="Club de pétanque de...">
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="sport">Sport principal *</label>
+            <select id="sport" name="sport" required>
+              <option value="">Choisir...</option>
+              <option value="petanque">Pétanque / Jeu Provençal</option>
+              <option value="tennis">Tennis</option>
+              <option value="basket">Basket-ball</option>
+              <option value="badminton">Badminton</option>
+              <option value="tennis-table">Tennis de table</option>
+              <option value="football">Football</option>
+              <option value="crossfit">Crossfit / Fitness</option>
+              <option value="autre">Autre</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="taille">Taille du club</label>
+            <select id="taille" name="taille">
+              <option value="">Choisir...</option>
+              <option value="petit">Moins de 50 membres</option>
+              <option value="moyen">50 à 200 membres</option>
+              <option value="grand">Plus de 200 membres</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Utilisez-vous un logiciel de gestion de concours ?</label>
+          <div style="display:flex;gap:1rem;margin-bottom:0.75rem;">
+            <label style="display:flex;align-items:center;gap:6px;font-weight:500;cursor:pointer;">
+              <input type="radio" name="logiciel_oui_non" value="oui" onchange="document.getElementById('logiciel-nom-wrapper').style.display='block'"> Oui
+            </label>
+            <label style="display:flex;align-items:center;gap:6px;font-weight:500;cursor:pointer;">
+              <input type="radio" name="logiciel_oui_non" value="non" onchange="document.getElementById('logiciel-nom-wrapper').style.display='none'"> Non
+            </label>
+          </div>
+          <div id="logiciel-nom-wrapper" style="display:none;">
+            <input type="text" id="logiciel" name="logiciel" placeholder="Nom du logiciel (ex : Gestion Concours, autre...)">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Quelques mots sur vos besoins <span style="font-weight:400;color:var(--text-muted)">(optionnel)</span></label>
+          <textarea id="message" name="message" placeholder="Quel problème vous pose aujourd'hui la gestion des appels ? Avez-vous un concours prévu bientôt ?"></textarea>
+        </div>
+
+        <button type="submit" class="btn-submit">Envoyer ma candidature →</button>
+
+        <div id="betaSuccess" style="display:none; background:#dcfce7; border:1px solid #86efac; border-radius:8px; padding:1rem; color:#166534; font-weight:600; margin-top:1rem;">
+          ✓ Candidature reçue ! On vous répond sous 48h pour confirmer votre accès.
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section style="background: var(--surface);">
+  <div class="container">
+    <p class="section-label">Questions fréquentes</p>
+    <h2 class="section-title">Tout ce que vous voulez savoir</h2>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Le plan Club est-il vraiment gratuit pendant les 3 mois de bêta ?
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Oui, complètement gratuit. Aucune carte bancaire demandée, aucun engagement. Vous accédez à toutes les fonctionnalités du plan Club (3 concours simultanés, appels automatiques, dictée vocale, gestion des scores) pendant 3 mois, sans frais.</div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Que se passe-t-il après les 3 mois de bêta ?
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Vous restez sur le plan Club si vous souhaitez continuer (10 €/mois ou 100 €/an), ou vous basculez vers le plan Starter gratuit. Vous n'êtes engagés à rien. Et si votre retour a été précieux, on discutera probablement d'une offre préférentielle.</div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Notre club ne publie pas ses résultats en ligne. Peut-on quand même participer ?
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Absolument. Les appels automatiques (pour les clubs utilisant Gestion Concours avec une page de résultats en ligne) ne sont qu'une des fonctionnalités de Notygo. Les appels manuels et la dictée vocale fonctionnent indépendamment et sont tout aussi utiles pour tous les clubs.</div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Combien de temps faut-il pour configurer son premier concours ?
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Moins de 5 minutes pour un concours basique. On vous accompagne lors de la première configuration si vous le souhaitez — un appel de 20 minutes suffit pour tout paramétrer ensemble avant votre premier événement.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-section">
+  <div class="container">
+    <h2>Prêt à moderniser vos concours ?</h2>
+    <p>5 places disponibles. Candidatez maintenant, on revient vers vous sous 48h.</p>
+    <div class="hero-ctas">
+      <a href="#candidature" class="btn-primary">Candidater →</a>
+      <a href="contact.html" class="btn-secondary">Nous contacter</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="/" class="footer-logo"><img src="/images/logo-white.png" alt="Notygo" width="105" height="32" loading="lazy"></a>
+      <p>La plateforme de gestion d'appels pour concours sportifs. Notifications push instantanées sur iOS et Android.</p>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/notygo_fr/" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+        <a href="https://www.facebook.com/notygo.fr/" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+        <a href="https://www.youtube.com/@notygo_fr" target="_blank" rel="noopener" aria-label="YouTube">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
+        </a>
+        <a href="https://www.tiktok.com/@notygo_fr" target="_blank" rel="noopener" aria-label="TikTok">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Produit</h4>
+      <ul>
+        <li><a href="fonctionnement.html">Comment ça marche</a></li>
+        <li><a href="fonctionnalites.html">Fonctionnalités</a></li>
+        <li><a href="tarifs.html">Tarifs</a></li>
+        <li><a href="https://notygo.app/register">Créer un compte</a></li>
+        <li><a href="https://notygo.app/login">Se connecter</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Ressources</h4>
+      <ul>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="sports.html">Tous les sports</a></li>
+        <li><a href="beta.html">Programme bêta</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 SASU SEVEN COMWEB. Tous droits réservés.</span>
+    <div style="display:flex; gap:1.5rem;">
+      <a href="mentions-legales.html">Mentions légales</a>
+      <a href="confidentialite.html">Confidentialité</a>
+      <a href="cgu.html">CGU</a>
+      <a href="cgv.html">CGV</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function openMobileMenu() { document.getElementById('mobileMenu').classList.add('open'); }
+  function closeMobileMenu() { document.getElementById('mobileMenu').classList.remove('open'); }
+
+  async function handleBetaSubmit(e) {
+    e.preventDefault();
+    const form = document.getElementById('betaForm');
+    const btn = form.querySelector('.btn-submit');
+    btn.textContent = 'Envoi en cours…';
+    btn.disabled = true;
+
+    const data = {
+      prenom: form.prenom.value,
+      nom: form.nom.value,
+      email: form.email.value,
+      club: form.club.value,
+      sport: form.sport.value,
+      taille: form.taille.value || null,
+      logiciel_oui_non: form.logiciel_oui_non ? (form.querySelector('input[name="logiciel_oui_non"]:checked')?.value || null) : null,
+      logiciel: form.logiciel?.value || null,
+      message: form.message.value || null,
+    };
+
+    try {
+      const res = await fetch('https://notygo.app/api/beta/apply', {
+        method: 'POST',
+        body: JSON.stringify(data),
+        headers: { 'Content-Type': 'application/json' }
+      });
+      if (res.ok) {
+        btn.style.display = 'none';
+        document.getElementById('betaSuccess').style.display = 'block';
+        document.getElementById('betaSuccess').scrollIntoView({ behavior: 'smooth', block: 'center' });
+      } else {
+        const err = await res.json().catch(() => ({}));
+        console.error('[beta form] HTTP', res.status, err);
+        btn.textContent = 'Erreur — réessayez';
+        btn.disabled = false;
+      }
+    } catch (err) {
+      console.error('[beta form] network error', err);
+      btn.textContent = 'Erreur — réessayez';
+      btn.disabled = false;
+    }
+  }
+
+  // FAQ accordion
+  function toggleFaq(btn) {
+    const item = btn.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  }
+</script>
+<script src="/animations.js" defer></script>
+
+<!-- BANDEAU COOKIE RGPD -->
+<div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#0A1F44;color:white;padding:1rem 2rem;z-index:9999;box-shadow:0 -4px 20px rgba(0,0,0,0.3);">
+  <div style="max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;">
+    <p style="margin:0;font-size:0.875rem;color:rgba(255,255,255,0.85);flex:1;min-width:260px;">
+      🍪 Ce site utilise uniquement des cookies techniques nécessaires à son fonctionnement. Aucun cookie publicitaire ou de traçage.
+      <a href="confidentialite.html" style="color:#FE5536;text-decoration:underline;margin-left:4px;">En savoir plus</a>
+    </p>
+    <div style="display:flex;gap:0.75rem;flex-shrink:0;">
+      <button onclick="acceptCookies()" style="background:#FE5536;color:white;border:none;padding:9px 20px;border-radius:6px;font-weight:700;font-size:0.875rem;cursor:pointer;">J'accepte</button>
+      <button onclick="refuseCookies()" style="background:transparent;color:rgba(255,255,255,0.7);border:1px solid rgba(255,255,255,0.3);padding:9px 20px;border-radius:6px;font-size:0.875rem;cursor:pointer;">Refuser</button>
+    </div>
+  </div>
+</div>
+<script>
+  (function(){ if(!localStorage.getItem("cookie_consent")){ document.getElementById("cookie-banner").style.display="block"; } })();
+  function acceptCookies(){ localStorage.setItem("cookie_consent","accepted"); document.getElementById("cookie-banner").style.display="none"; }
+  function refuseCookies(){ localStorage.setItem("cookie_consent","refused"); document.getElementById("cookie-banner").style.display="none"; }
+</script>
+</body>
+</html>
