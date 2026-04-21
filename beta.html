@@ -611,23 +611,23 @@
     btn.textContent = 'Envoi en cours…';
     btn.disabled = true;
 
-    const data = {
-      prenom: form.prenom.value,
-      nom: form.nom.value,
-      email: form.email.value,
-      club: form.club.value,
-      sport: form.sport.value,
-      taille: form.taille.value || null,
-      logiciel_oui_non: form.logiciel_oui_non ? (form.querySelector('input[name="logiciel_oui_non"]:checked')?.value || null) : null,
-      logiciel: form.logiciel?.value || null,
-      message: form.message.value || null,
-    };
+    const params = new URLSearchParams();
+    params.set('prenom', form.prenom.value);
+    params.set('nom', form.nom.value);
+    params.set('email', form.email.value);
+    params.set('club', form.club.value);
+    params.set('sport', form.sport.value);
+    if (form.taille.value) params.set('taille', form.taille.value);
+    const logicielChecked = form.querySelector('input[name="logiciel_oui_non"]:checked');
+    if (logicielChecked) params.set('logiciel_oui_non', logicielChecked.value);
+    const logicielNom = form.querySelector('#logiciel');
+    if (logicielNom?.value) params.set('logiciel', logicielNom.value);
+    if (form.message.value) params.set('message', form.message.value);
 
     try {
-      const res = await fetch('https://notygo.app/api/beta/apply', {
+      const res = await fetch('https://www.notygo.app/api/beta/apply', {
         method: 'POST',
-        body: JSON.stringify(data),
-        headers: { 'Content-Type': 'application/json' }
+        body: params,
       });
       if (res.ok) {
         btn.style.display = 'none';
