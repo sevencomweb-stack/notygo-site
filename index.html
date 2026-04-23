@@ -11,11 +11,11 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Notygo">
   <meta property="og:locale" content="fr_FR">
-  <meta property="og:image" content="https://notygo.fr/images/Logo.png">
+  <meta property="og:image" content="https://notygo.fr/images/og-image.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Notygo — Notifications push pour vos concours sportifs">
   <meta name="twitter:description" content="Notygo simplifie l'appel des parties lors de vos concours sportifs. Vos joueurs reçoivent des notifications push instantanées sur iOS et Android, sans configuration complexe.">
-  <meta name="twitter:image" content="https://notygo.fr/images/Logo.png">
+  <meta name="twitter:image" content="https://notygo.fr/images/og-image.png">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://notygo.fr">
   <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
@@ -29,7 +29,7 @@
     "@type": "Organization",
     "name": "Notygo",
     "url": "https://notygo.fr",
-    "logo": "https://notygo.fr/images/Logo.png",
+    "logo": "https://notygo.fr/images/og-image.png",
     "sameAs": ["https://notygo.app"],
     "contactPoint": {
       "@type": "ContactPoint",
@@ -71,7 +71,7 @@
       }
     ],
     "description": "Notygo envoie des notifications push instantanées sur le téléphone des joueurs dès qu'une partie est appelée lors d'un concours sportif.",
-    "screenshot": "https://notygo.fr/images/Logo.png",
+    "screenshot": "https://notygo.fr/images/og-image.png",
     "featureList": "Notifications push, Appels automatiques, Dictée vocale, Écran TV, QR Code, Gestion des scores"
   }
   </script>
@@ -137,30 +137,49 @@
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-badge">🏆 Pétanque · Tennis · Basket · Crossfit et plus</div>
-  <h1>Fini le mégaphone.<br><span>Vos joueurs notifiés en temps réel</span></h1>
-  <p>Notygo envoie des notifications push instantanées sur le téléphone de vos joueurs dès qu'une partie est appelée — même écran verrouillé. Aucune application à télécharger. Compatible iOS et Android.</p>
-  <div class="hero-ctas">
-    <a href="https://notygo.app/register" class="btn-primary">Commencer gratuitement →</a>
-    <a href="fonctionnalites.html" class="btn-secondary">Découvrir les fonctionnalités</a>
+  <div class="hero-inner">
+    <div class="hero-content">
+      <h1>L'outil moderne des<br><span>organisateurs sportifs.</span></h1>
+      <p>Vos joueurs reçoivent leur appel de partie directement sur leur téléphone — même s'ils sont loin, même écran verrouillé. Zéro excuse, juste du sport.</p>
+      <div class="hero-ctas">
+        <a href="https://notygo.app/register" class="btn-primary">Commencer gratuitement →</a>
+        <a href="fonctionnement.html" class="btn-secondary">Comment ça marche</a>
+      </div>
+      <p class="hero-compat">Compatible pétanque, tennis, basket, crossfit et tous formats de concours</p>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <div class="notif-stack">
+        <div class="notif-bubble notif-bubble--1">
+          <div class="notif-bubble-icon">🔔</div>
+          <div class="notif-bubble-body">
+            <div class="notif-bubble-header">
+              <span class="notif-bubble-app">Notygo</span>
+              <span class="notif-bubble-time">maintenant</span>
+            </div>
+            <div class="notif-bubble-title">Équipe 42 vs Équipe 57</div>
+            <div class="notif-bubble-sub">Terrain 3 — Présentez-vous !</div>
+          </div>
+        </div>
+        <div class="notif-bubble notif-bubble--2">
+          <div class="notif-bubble-icon">⚡</div>
+          <div class="notif-bubble-body">
+            <div class="notif-bubble-header">
+              <span class="notif-bubble-app">Notygo</span>
+              <span class="notif-bubble-time">14h47</span>
+            </div>
+            <div class="notif-bubble-title">Votre partie commence !</div>
+            <div class="notif-bubble-sub">Équipe 18 · Piste 1 · Maintenant</div>
+          </div>
+        </div>
+        <p class="notif-hint">📱 Reçu même écran verrouillé</p>
+      </div>
+    </div>
   </div>
   <div class="hero-stats">
-    <div class="hero-stat">
-      <strong>0€</strong>
-      <span>Pour démarrer</span>
-    </div>
-    <div class="hero-stat">
-      <strong>30s</strong>
-      <span>Pour configurer un concours</span>
-    </div>
-    <div class="hero-stat">
-      <strong>iOS & Android</strong>
-      <span>Compatible</span>
-    </div>
-    <div class="hero-stat">
-      <strong>Illimité</strong>
-      <span>Notifications push</span>
-    </div>
+    <div class="hero-stat"><strong>0€</strong><span>Pour démarrer</span></div>
+    <div class="hero-stat"><strong>30s</strong><span>Pour créer un concours</span></div>
+    <div class="hero-stat"><strong>iOS & Android</strong><span>Compatible</span></div>
+    <div class="hero-stat"><strong>Illimité</strong><span>Notifications push</span></div>
   </div>
 </section>
 
@@ -169,28 +188,64 @@
   <div class="container">
     <p class="section-label">Simplicité avant tout</p>
     <h2 class="section-title">Comment ça marche ?</h2>
-    <p class="section-subtitle">En quelques minutes, vos joueurs reçoivent leurs notifications directement sur leur téléphone.</p>
-    <div class="steps">
-      <div class="step reveal reveal-delay-1">
-        <div class="step-number">1</div>
-        <h3>Créez votre concours</h3>
-        <p>Configurez votre concours en 30 secondes : nom, sport, terrains. Un QR code est généré automatiquement.</p>
+    <p class="section-subtitle">En quelques minutes, votre événement tourne, vos joueurs reçoivent leurs parties sur leur téléphone.</p>
+    <div class="steps-v2">
+
+      <div class="step-v2 reveal">
+        <div class="step-v2-text">
+          <div class="step-number">1</div>
+          <h3>Créez votre concours</h3>
+          <p>Configurez votre concours en 30 secondes : nom, sport, terrains. Un QR code unique est généré automatiquement pour vos joueurs.</p>
+        </div>
+        <div class="step-v2-img">
+          <img src="/images/screenshot-creation.png" alt="Création d'un concours sur Notygo" loading="lazy" width="560" height="360">
+        </div>
       </div>
-      <div class="step reveal reveal-delay-2">
-        <div class="step-number">2</div>
-        <h3>Les joueurs scannent</h3>
-        <p>Chaque joueur scanne le QR code avec son téléphone et s'abonne aux notifications de son équipe.</p>
+
+      <div class="step-v2 step-v2--rev reveal">
+        <div class="step-v2-text">
+          <div class="step-number">2</div>
+          <h3>Les joueurs scannent</h3>
+          <p>Chaque joueur scanne le QR code avec son téléphone et s'abonne aux notifications de son équipe. Aucun compte à créer, aucune app à télécharger.</p>
+        </div>
+        <div class="step-v2-img">
+          <img src="/images/screenshot-appel.png" alt="Page joueur Notygo — scan QR code" loading="lazy" width="560" height="360">
+        </div>
       </div>
-      <div class="step reveal reveal-delay-3">
-        <div class="step-number">3</div>
-        <h3>Appelez les parties</h3>
-        <p>Manuellement, par dictée vocale, ou automatiquement en scannant votre page de résultats en ligne.</p>
+
+      <div class="step-v2 reveal">
+        <div class="step-v2-text">
+          <div class="step-number">3</div>
+          <h3>Appelez les parties</h3>
+          <p>Manuellement, par dictée vocale ou automatiquement via votre logiciel de gestion. En 3 secondes, la partie est appelée depuis n'importe quel appareil.</p>
+        </div>
+        <div class="step-v2-img">
+          <img src="/images/screenshot-dashboard.png" alt="Dashboard organisateur Notygo" loading="lazy" width="560" height="360">
+        </div>
       </div>
-      <div class="step reveal reveal-delay-4">
-        <div class="step-number">4</div>
-        <h3>Notification instantanée</h3>
-        <p>Les joueurs reçoivent une notification push sur leur téléphone avec le terrain et les équipes.</p>
+
+      <div class="step-v2 step-v2--rev reveal">
+        <div class="step-v2-text">
+          <div class="step-number">4</div>
+          <h3>Notification instantanée</h3>
+          <p>Chaque joueur reçoit une alerte push directement sur son téléphone — même s'il est au bar, même écran verrouillé. Zéro excuse, juste du sport.</p>
+        </div>
+        <div class="step-v2-notif">
+          <div class="notif-bubble">
+            <div class="notif-bubble-icon">🔔</div>
+            <div class="notif-bubble-body">
+              <div class="notif-bubble-header">
+                <span class="notif-bubble-app">Notygo</span>
+                <span class="notif-bubble-time">maintenant</span>
+              </div>
+              <div class="notif-bubble-title">Équipe 42 vs Équipe 57</div>
+              <div class="notif-bubble-sub">Terrain 3 — Présentez-vous !</div>
+            </div>
+          </div>
+          <p class="step-v2-notif-hint">Reçu même écran verrouillé 🔒</p>
+        </div>
       </div>
+
     </div>
   </div>
 </section>
@@ -200,44 +255,74 @@
   <div class="container">
     <p class="section-label">Tout ce dont vous avez besoin</p>
     <h2 class="section-title">Fonctionnalités principales</h2>
-    <p class="section-subtitle">Une solution complète pour gérer vos concours sportifs de A à Z.</p>
-    <div class="features-grid">
+    <p class="section-subtitle">Un outil complet pensé pour les organisateurs — pas pour les développeurs.</p>
+
+    <!-- Highlights avec screenshots -->
+    <div class="features-highlights">
+
+      <div class="feature-highlight reveal">
+        <div class="feature-highlight-text">
+          <span class="feature-highlight-icon">🤖</span>
+          <h3>Appels automatiques</h3>
+          <p>Si votre logiciel de gestion publie les résultats en ligne, Notygo les surveille et notifie les joueurs dès qu'une nouvelle partie apparaît. Zéro saisie manuelle, zéro oubli.</p>
+          <ul class="feature-highlight-list">
+            <li>✓ Compatible avec les logiciels de gestion courants</li>
+            <li>✓ Détection en temps réel, notification immédiate</li>
+            <li>✓ Accompagnement à la configuration inclus</li>
+          </ul>
+        </div>
+        <div class="feature-highlight-img">
+          <img src="/images/screenshot-dashboard.png" alt="Dashboard organisateur — appels automatiques Notygo" loading="lazy">
+        </div>
+      </div>
+
+      <div class="feature-highlight feature-highlight--rev reveal">
+        <div class="feature-highlight-text">
+          <span class="feature-highlight-icon">📺</span>
+          <h3>Écran TV temps réel</h3>
+          <p>Affichez en direct les parties en cours sur un écran TV visible de tous. Mis à jour automatiquement à chaque appel — idéal pour les salles, gymnases ou grands espaces extérieurs.</p>
+          <ul class="feature-highlight-list">
+            <li>✓ Un simple lien, un écran, c'est tout</li>
+            <li>✓ Mise à jour instantanée sans rechargement</li>
+            <li>✓ Compatible tous écrans, toutes plateformes</li>
+          </ul>
+        </div>
+        <div class="feature-highlight-img">
+          <img src="/images/screenshot-tv.png" alt="Écran TV temps réel — Notygo" loading="lazy">
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Grille secondaire -->
+    <div class="features-grid" style="margin-top:0;">
       <div class="feature-card reveal reveal-delay-1">
         <div class="feature-icon">🔔</div>
         <h3>Notifications push instantanées</h3>
-        <p>Vos joueurs reçoivent une notification sur leur téléphone dès que leur partie est appelée, même si l'écran est verrouillé.</p>
+        <p>Chaque joueur reçoit une alerte dès que sa partie est appelée, même écran verrouillé. iOS et Android. Sans app.</p>
       </div>
       <div class="feature-card reveal reveal-delay-2">
-        <div class="feature-icon">🤖</div>
-        <h3>Appels automatiques</h3>
-        <p>Si votre logiciel de gestion publie les résultats en ligne (ex : Gestion Concours), Notygo scanne automatiquement cette page et notifie les joueurs à chaque nouvelle partie. Nous vous accompagnons dans la configuration.</p>
-      </div>
-      <div class="feature-card reveal reveal-delay-3">
         <div class="feature-icon">🎤</div>
         <h3>Dictée vocale</h3>
-        <p>Appelez une partie en parlant : "Équipe 42 contre équipe 57 terrain 3". Notygo remplit le formulaire automatiquement.</p>
-      </div>
-      <div class="feature-card reveal reveal-delay-1">
-        <div class="feature-icon">📺</div>
-        <h3>Écran TV temps réel</h3>
-        <p>Affichez en temps réel les parties en cours sur un grand écran, visible par tous les participants du concours.</p>
-      </div>
-      <div class="feature-card reveal reveal-delay-2">
-        <div class="feature-icon">📱</div>
-        <h3>QR Code joueur</h3>
-        <p>Un simple QR code suffit pour que vos joueurs s'abonnent aux notifications, sans compte ni téléchargement.</p>
+        <p>Dites "Équipe 42 contre 57 terrain 3" — Notygo remplit le formulaire et notifie. Mains libres, résultat immédiat.</p>
       </div>
       <div class="feature-card reveal reveal-delay-3">
+        <div class="feature-icon">📱</div>
+        <h3>QR Code joueur</h3>
+        <p>Un QR code unique par concours. Les joueurs scannent, s'abonnent, et reçoivent. Aucun compte, aucune friction.</p>
+      </div>
+      <div class="feature-card reveal reveal-delay-1">
         <div class="feature-icon">🏆</div>
         <h3>Gestion des scores</h3>
-        <p>Les équipes saisissent et valident leurs scores directement depuis leur téléphone. L'adversaire confirme ou conteste.</p>
+        <p>Les équipes saisissent et valident leurs scores depuis leur téléphone. L'adversaire confirme ou conteste en temps réel.</p>
       </div>
-      <div class="feature-card feature-card-new reveal reveal-delay-4">
+      <div class="feature-card feature-card-new reveal reveal-delay-2">
         <div class="feature-icon">🧍</div>
         <h3>Mode Solo / Individuel <span class="feature-new-badge">Nouveau</span></h3>
-        <p>Appelez un athlète individuel sur une zone, sans adversaire. Idéal pour l'escalade, le crossfit ou toute compétition par passages.</p>
+        <p>Appelez un athlète individuel sur une zone, sans adversaire. Idéal pour l'escalade, le crossfit ou les passages individuels.</p>
       </div>
     </div>
+
     <div style="text-align:center; margin-top: 2.5rem;">
       <a href="fonctionnalites.html" class="btn-primary">Voir toutes les fonctionnalités →</a>
     </div>
@@ -427,6 +512,7 @@
   function closeMobileMenu() { document.getElementById('mobileMenu').classList.remove('open'); }
 </script>
 <script src="/animations.js" defer></script>
+<script src="/scripts/beta-popup.js" defer></script>
 
 <!-- BANDEAU COOKIE RGPD -->
 <div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#0A1F44;color:white;padding:1rem 2rem;z-index:9999;box-shadow:0 -4px 20px rgba(0,0,0,0.3);">
